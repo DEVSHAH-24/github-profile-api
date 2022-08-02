@@ -7,10 +7,11 @@ import {
   TouchableOpacity,
   TouchableHighlight,
 } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
-import { NavigationContainer, StackActions } from "@react-navigation/native";
 import { useEffect, useState } from "react";
-import SearchBar from "./SearchBar";
+import SearchBarFcn from "./SearchBar";
+import { Searchbar } from "react-native-paper";
+import UserInfoCard from "./Info";
+
 
 function Main() {
   const [username, setUsername] = useState("");
@@ -36,7 +37,11 @@ function Main() {
   return (
     
 <View>
-    <SearchBar username={() => setUsername}/>
+  <Searchbar placeholder="Search" onChangeText={(text)=> setUsername(text)}>
+
+  </Searchbar>
+  <UserInfoCard userData={userData}></UserInfoCard>
+    
     </View>
 
     

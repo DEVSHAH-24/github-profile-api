@@ -4,8 +4,9 @@ import { getAuth } from "firebase/auth";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import SearchBar from './components/SearchBar';
+import SearchBarFcn from './components/SearchBar';
 import Main from './components/FetchComponent';
+import UserInfoCard from './components/Info';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -25,7 +26,9 @@ import Main from './components/FetchComponent';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Main></Main>
+      <Main>
+        <UserInfoCard/>
+      </Main>
 
     </View>
   );

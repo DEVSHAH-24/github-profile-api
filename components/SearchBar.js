@@ -10,21 +10,20 @@ import {
     TextInput,
   } from "react-native-web";
   
-function SearchBar({username, setUsername}){
+function SearchBarFcn({username,setUserName}){
 	const onChange = (e) =>{
-		setUsername(e.target.value)
+		setUserName(e)
 	}
 	return(
 		<View>
 		<TextInput
 			placeholder="Search"
 			type="text"
-			onChangeText={(event) => {onChange(event)}}
-			onKeyUp={(event) => {onChange(event)}}
-			onPaste={(event) => {onChange(event)}}
+			onChangeText={(event) => onChange(event)}
+			
 		/>
 		</View>
 	);
 }
 
-export default SearchBar;
+export default SearchBarFcn;
