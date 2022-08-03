@@ -9,7 +9,7 @@ import {
     TouchableHighlight,
     TextInput,
   } from "react-native-web";
-  
+// REDUNDANT FILE!
 function SearchBarFcn({username,setUserName}){
 	const onChange = (e) =>{
 		setUserName(e)

@@ -9,7 +9,7 @@ function UserInfoCard({ userData }) {
         <Text>{userData.login}</Text>
         
         <Text>{userData.name}</Text>
-      </View>
+      </View> 
     );
 }
   
