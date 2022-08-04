@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import SearchBarFcn from "./SearchBar";
 import { Searchbar } from "react-native-paper";
 import UserInfoCard from "./Info";
-
+import axios from "axios";
 
 function Main() {
   const [username, setUsername] = useState("");
@@ -19,6 +19,9 @@ function Main() {
   var gitHubUrl = `https://api.github.com/users/${username}`;
 
   const getUserData = async () => {
+    axios.get(gitHubUrl).then((response)=> {
+      response.message !== "Not Found" ? setUserData(response) : console.log
+    })
     const response = await fetch(gitHubUrl);
     const jsonData = await response.json();
     if (jsonData && jsonData.message !== "Not Found") {
@@ -33,18 +36,17 @@ function Main() {
   useEffect(() => {
     getUserData();
   }, [username]);
+  const onChangeSearch = query => setUsername(query);
 
   return (
-    
-<View>
-  <Searchbar placeholder="Search" onChangeText={(text)=> setUsername(text)}>
-
-  </Searchbar>
-  <UserInfoCard userData={userData}></UserInfoCard>
-    
+    <View>
+      <Searchbar
+        placeholder="Search"
+        onIconPress={onChangeSearch}
+      />
+      <UserInfoCard userData={userData}/>
     </View>
-
-    
   );
 }
+const styles = {};
 export default Main;
