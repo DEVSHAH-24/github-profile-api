@@ -12,6 +12,8 @@ import SearchBarFcn from "./SearchBar";
 import { Searchbar } from "react-native-paper";
 import UserInfoCard from "./Info";
 import axios from "axios";
+import PublicRepos from "./publicRepos";
+
 
 function Main() {
   const [username, setUsername] = useState("");
@@ -19,9 +21,9 @@ function Main() {
   var gitHubUrl = `https://api.github.com/users/${username}`;
 
   const getUserData = async () => {
-    axios.get(gitHubUrl).then((response)=> {
-      response.message !== "Not Found" ? setUserData(response) : console.log
-    })
+    // axios.get(gitHubUrl).then((response)=> {
+    //   response.message !== "Not Found" ? setUserData(response) : console.log
+    // })
     const response = await fetch(gitHubUrl);
     const jsonData = await response.json();
     if (jsonData && jsonData.message !== "Not Found") {
@@ -36,17 +38,32 @@ function Main() {
   useEffect(() => {
     getUserData();
   }, [username]);
-  const onChangeSearch = query => setUsername(query);
+  // const onChangeSearch = query => setUsername(query);
 
   return (
     <View>
-      <Searchbar
-        placeholder="Search"
-        onIconPress={onChangeSearch}
-      />
-      <UserInfoCard userData={userData}/>
+      <View style={styles.container}>
+        <Searchbar placeholder="Search" onChangeText={(e) => setUsername(e)} />
+        <Button title="Logout"></Button>
+      </View>
+      <View>
+        <UserInfoCard userData={userData} />
+        <View>
+          <Text>Public repos</Text>
+          <PublicRepos userData = {userData}/>
+        </View>
+      </View>
     </View>
   );
 }
-const styles = {};
+const styles = StyleSheet.create({
+  // outerContainer: {
+  //   backgroundColor: "grey",
+  // },
+  container: {
+    flexDirection: "horizontal",
+    
+    
+  },
+});
 export default Main;
