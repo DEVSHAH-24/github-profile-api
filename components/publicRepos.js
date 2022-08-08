@@ -7,9 +7,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
-//doubt - shall we listen to userData for changes?
 function PublicRepos({ userData }) {
-  console.log(userData.repos_url);
   const [repoData, setRepoData] = useState({});
 
   const getRepoData = async () => {
@@ -41,9 +39,11 @@ function PublicRepos({ userData }) {
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
             <TouchableOpacity style={styles.item}>
-              <Text style={[styles.textStyle]} >
-                {item.name}, {item.description}
+              <Text style={[styles.textStyle]}>
+                {item.name}
+                {"\n"}
               </Text>
+              <Text>{item.description}</Text>
             </TouchableOpacity>
           )}
         />
@@ -54,14 +54,14 @@ function PublicRepos({ userData }) {
 const styles = StyleSheet.create({
   textStyle: {
     fontSize: 16,
-    fontWeight: 200,
-    
+    fontWeight: 700,
   },
   item: {
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
-    backgroundColor: '#add8e6'
+    backgroundColor: "#ddd8e6",
+    borderRadius: 25
   },
 });
 export default PublicRepos;

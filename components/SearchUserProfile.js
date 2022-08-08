@@ -13,12 +13,16 @@ import { Searchbar } from "react-native-paper";
 import UserInfoCard from "./Info";
 import axios from "axios";
 import PublicRepos from "./publicRepos";
+//import { SearchBar } from 'react-native-elements';
 
+import SearchBar from 'react-native-searchbar';
 
 function Main() {
-  const [username, setUsername] = useState("");
+ // const [username, setUsername] = useState("");
   const [userData, setUserData] = useState({});
-  var gitHubUrl = `https://api.github.com/users/${username}`;
+  
+  const [currentName, setCurrentName] = useState('');
+  var gitHubUrl = `https://api.github.com/users/${currentName}`;
 
   const getUserData = async () => {
     // axios.get(gitHubUrl).then((response)=> {
@@ -31,27 +35,31 @@ function Main() {
       console.log(jsonData);
     } else if (username !== "") {
       console.log("Username does not exist");
+      setUserData({});
+      
+
     } else {
       setUserData({});
+    
     }
   };
-  useEffect(() => {
-    getUserData();
-  }, [username]);
-  // const onChangeSearch = query => setUsername(query);
+  // useEffect(() => {
+  // }, [username]);
+  // const onChangeSearch = query => setUsername(query); 
 
   return (
-    <View>
-      <View style={styles.container}>
-        <Searchbar placeholder="Search" onChangeText={(e) => setUsername(e)} />
-        <Button title="Logout"></Button>
+    <View style={styles.container}>
+      <View style={styles.searchLogout}>
+        <Searchbar placeholder="Search" onChangeText={(e)=> setCurrentName(e)} onIconPress= {()=> getUserData()}  />
+        <Button title="Logout" ></Button>
       </View>
-      <View>
+      <View style={styles.container}>
         <UserInfoCard userData={userData} />
-        <View>
-          <Text>Public repos</Text>
-          <PublicRepos userData = {userData}/>
-        </View>
+      </View>
+
+      <View style={styles.container}>
+        <Text style={styles.titleStyle}>Public repos</Text>
+        <PublicRepos userData={userData} />
       </View>
     </View>
   );
@@ -61,9 +69,20 @@ const styles = StyleSheet.create({
   //   backgroundColor: "grey",
   // },
   container: {
-    flexDirection: "horizontal",
-    
-    
+    //  flexDirection: "horizontal",
+    alignItems: "center",
   },
+  searchLogout: {
+    flexDirection: "row",
+    alignItems: 'flex-end',
+    padding: 20,
+  alignContent: 'space-between'
+  },
+  titleStyle: {
+    fontSize: 20,
+    fontWeight: "500",
+    paddingVertical: 20,
+    color: 'green'
+  }
 });
 export default Main;
