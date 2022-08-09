@@ -15,13 +15,15 @@ import axios from "axios";
 import PublicRepos from "./publicRepos";
 //import { SearchBar } from 'react-native-elements';
 
-import SearchBar from 'react-native-searchbar';
+import SearchBar from "react-native-searchbar";
+import { signOut } from "firebase/auth";
+import { useNavigation } from "@react-navigation/native";
+import { auth } from "../firebase";
 
 function Main() {
- // const [username, setUsername] = useState("");
   const [userData, setUserData] = useState({});
-  
-  const [currentName, setCurrentName] = useState('');
+
+  const [currentName, setCurrentName] = useState("");
   var gitHubUrl = `https://api.github.com/users/${currentName}`;
 
   const getUserData = async () => {
@@ -36,22 +38,31 @@ function Main() {
     } else if (username !== "") {
       console.log("Username does not exist");
       setUserData({});
-      
-
     } else {
       setUserData({});
-    
     }
   };
   // useEffect(() => {
   // }, [username]);
-  // const onChangeSearch = query => setUsername(query); 
+  // const onChangeSearch = query => setUsername(query);
+  const navigation = useNavigation();
+  const handleSignOut=()=> {
+    signOut(auth).then(()=>{
+      console.log('signingout')
+      navigation.navigate('Login');
+    }).catch(e => alert(e.message))
+  }
+
 
   return (
     <View style={styles.container}>
       <View style={styles.searchLogout}>
-        <Searchbar placeholder="Search" onChangeText={(e)=> setCurrentName(e)} onIconPress= {()=> getUserData()}  />
-        <Button title="Logout" ></Button>
+        <Searchbar
+          placeholder="Search"
+          onChangeText={(e) => setCurrentName(e)}
+          onIconPress={() => getUserData()}
+        />
+        <Button title="Logout" onPress={handleSignOut}></Button>
       </View>
       <View style={styles.container}>
         <UserInfoCard userData={userData} />
@@ -74,15 +85,15 @@ const styles = StyleSheet.create({
   },
   searchLogout: {
     flexDirection: "row",
-    alignItems: 'flex-end',
+    alignItems: "flex-end",
     padding: 20,
-  alignContent: 'space-between'
+    alignContent: "space-between",
   },
   titleStyle: {
     fontSize: 20,
     fontWeight: "500",
     paddingVertical: 20,
-    color: 'green'
-  }
+    color: "green",
+  },
 });
 export default Main;

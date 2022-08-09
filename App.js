@@ -1,20 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { getAuth } from "firebase/auth";
-
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import SearchBarFcn from "./components/SearchBar";
 import Main from "./components/SearchUserProfile";
-import UserInfoCard from "./components/Info";
-import { GoogleAuthProvider } from "firebase/auth";
-
-const provider = new GoogleAuthProvider();
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import LoginScreen from "./screens/LoginScreen";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+const Stack = createNativeStackNavigator();
 const firebaseConfig = {
   apiKey: "AIzaSyClzkXRH_mOI-WyKvF7h3cSyQ-CLutaI7c",
   authDomain: "github-api-66ce7.firebaseapp.com",
@@ -27,14 +23,18 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-// Initialize Firebase
-//const app = initializeApp(firebaseConfig);
-
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Main />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Login"
+          component={LoginScreen}
+        />
+        <Stack.Screen name="Home" component={Main} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -43,12 +43,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff0fa",
     alignItems: "center",
-  //  justifyContent: "center",
+    justifyContent: "center",
   },
-  outerContainer: {
-    
-  },
-  // container: {
-  //   flexDirection: "horizontal",
-  // },
+  outerContainer: {},
 });
