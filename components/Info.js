@@ -1,11 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, Image } from "react-native";
-import { View } from "react-native-web";
+import { View } from "react-native";
 
 function UserInfoCard({ userData }) {
   return (
     <View style={styles.container}>
-
       <Image
         style={styles.stretch}
         source={{
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
   container: {
     //  flexDirection: "horizontal",
     alignItems: "center",
-    padding: 35
+    padding: 35,
   },
 });
 export default UserInfoCard;

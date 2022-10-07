@@ -54,14 +54,14 @@ function PublicRepos({ userData }) {
 const styles = StyleSheet.create({
   textStyle: {
     fontSize: 16,
-    fontWeight: 700,
+    fontWeight: "700",
   },
   item: {
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
     backgroundColor: "#ddd8e6",
-    borderRadius: 25
+    borderRadius: 25,
   },
 });
 export default PublicRepos;

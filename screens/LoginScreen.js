@@ -6,7 +6,7 @@ import {
   TextInput,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { TouchableOpacity } from "react-native-web";
+import { TouchableOpacity } from "react-native";
 import { auth } from "../firebase";
 import {
   getAuth,
@@ -31,13 +31,11 @@ const LoginScreen = () => {
   };
 
   const handleLogin = () => {
-    
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
         console.log(user.email);
         navigation.navigate("Home");
-
       })
       .catch((e) => alert(e.message));
   };
@@ -69,17 +67,14 @@ const LoginScreen = () => {
         />
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          onPress={
-            handleLogin
-          }
-          style={styles.button}
-        >
-          <Text style={[styles.button, styles.buttonOutline]}>Login</Text>
+        <TouchableOpacity onPress={handleLogin} style={styles.button}>
+          <Text style={[styles.buttonText, styles.buttonOutline]}>Login</Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={handleSignUp} style={styles.button}>
-          <Text style={[styles.button, styles.buttonOutline]}>Register</Text>
+          <Text style={[styles.buttonText, styles.buttonOutline]}>
+            Register
+          </Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
@@ -100,7 +95,6 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: "80%",
-    
   },
   input: {
     backgroundColor: "white",
@@ -112,21 +106,21 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#0782F9",
     width: "50%",
-    padding: 15,
+    padding: 5,
     borderRadius: 10,
     alignItems: "center",
-    justifyContent:'center',
-    textAlign:'center'
+    // justifyContent: "center",
+    // textAlign: "center",
   },
   buttonContainer: {
-    width: "60%",
-    justifyContent: "center",
+    // width: "60%",
+    // justifyContent: "center",
     alignItems: "center",
-    marginTop: 40,
+    marginTop: 20,
   },
   buttonOutline: {
-    backgroundColor: "white",
-    marginTop: 5,
+    // backgroundColor: "green",
+    marginTop: 2,
     borderColor: "#0782F9",
     borderWidth: 2,
   },
@@ -134,7 +128,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "700",
     fontSize: 16,
-    alignItems: 'center'
+    alignItems: "center",
   },
 });
 export default LoginScreen;

@@ -14,11 +14,11 @@ import UserInfoCard from "./Info";
 import axios from "axios";
 import PublicRepos from "./publicRepos";
 //import { SearchBar } from 'react-native-elements';
-
 import SearchBar from "react-native-searchbar";
 import { signOut } from "firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 import { auth } from "../firebase";
+import { SafeAreaView } from "react-native";
 
 function Main() {
   const [userData, setUserData] = useState({});
@@ -46,33 +46,36 @@ function Main() {
   // }, [username]);
   // const onChangeSearch = query => setUsername(query);
   const navigation = useNavigation();
-  const handleSignOut=()=> {
-    signOut(auth).then(()=>{
-      console.log('signingout')
-      navigation.navigate('Login');
-    }).catch(e => alert(e.message))
-  }
-
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("signingout");
+        navigation.navigate("Login");
+      })
+      .catch((e) => alert(e.message));
+  };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.searchLogout}>
-        <Searchbar
-          placeholder="Search"
-          onChangeText={(e) => setCurrentName(e)}
-          onIconPress={() => getUserData()}
-        />
-        <Button title="Logout" onPress={handleSignOut}></Button>
-      </View>
+    <SafeAreaView>
       <View style={styles.container}>
-        <UserInfoCard userData={userData} />
-      </View>
+        <View style={styles.searchLogout}>
+          <Searchbar
+            placeholder="Search"
+            onChangeText={(e) => setCurrentName(e)}
+            onIconPress={() => getUserData()}
+          />
+          <Button title="Logout" onPress={handleSignOut}></Button>
+        </View>
+        <View style={styles.container}>
+          <UserInfoCard userData={userData} />
+        </View>
 
-      <View style={styles.container}>
-        <Text style={styles.titleStyle}>Public repos</Text>
-        <PublicRepos userData={userData} />
+        <View style={styles.container}>
+          <Text style={styles.titleStyle}>Public repos</Text>
+          <PublicRepos userData={userData} />
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
@@ -82,6 +85,7 @@ const styles = StyleSheet.create({
   container: {
     //  flexDirection: "horizontal",
     alignItems: "center",
+    paddingHorizontal: 20,
   },
   searchLogout: {
     flexDirection: "row",
