@@ -22,6 +22,7 @@ function PublicRepos({ userData }) {
     } else if (repoData !== "") {
       console.log("Username does not exist");
     } else {
+      console.log("case 3");
       setUserData({});
     }
   };
@@ -36,6 +37,7 @@ function PublicRepos({ userData }) {
       ) : (
         <FlatList
           data={repoData}
+          scrollEnabled={false}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
             <TouchableOpacity style={styles.item}>

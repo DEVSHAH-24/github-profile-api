@@ -6,6 +6,7 @@ import {
   Button,
   TouchableOpacity,
   TouchableHighlight,
+  Alert,
 } from "react-native";
 import { useEffect, useState } from "react";
 import SearchBarFcn from "./SearchBar";
@@ -13,12 +14,11 @@ import { Searchbar } from "react-native-paper";
 import UserInfoCard from "./Info";
 import axios from "axios";
 import PublicRepos from "./publicRepos";
-//import { SearchBar } from 'react-native-elements';
-import SearchBar from "react-native-searchbar";
 import { signOut } from "firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 import { auth } from "../firebase";
 import { SafeAreaView } from "react-native";
+import { ScrollView } from "react-native";
 
 function Main() {
   const [userData, setUserData] = useState({});
@@ -39,6 +39,7 @@ function Main() {
       console.log("Username does not exist");
       setUserData({});
     } else {
+      Alert.alert("Username not found", "Please try a different username");
       setUserData({});
     }
   };
@@ -56,7 +57,7 @@ function Main() {
   };
 
   return (
-    <SafeAreaView>
+    <ScrollView>
       <View style={styles.container}>
         <View style={styles.searchLogout}>
           <Searchbar
@@ -75,7 +76,7 @@ function Main() {
           <PublicRepos userData={userData} />
         </View>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({
@@ -85,11 +86,11 @@ const styles = StyleSheet.create({
   container: {
     //  flexDirection: "horizontal",
     alignItems: "center",
-    paddingHorizontal: 20,
+    paddingHorizontal: 25,
   },
   searchLogout: {
     flexDirection: "row",
-    alignItems: "flex-end",
+    alignItems: "space-between",
     padding: 20,
     alignContent: "space-between",
   },
