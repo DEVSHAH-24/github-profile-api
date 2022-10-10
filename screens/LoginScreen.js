@@ -6,7 +6,7 @@ import {
   TextInput,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, Image } from "react-native";
 import { auth } from "../firebase";
 import {
   createUserWithEmailAndPassword,
@@ -19,6 +19,8 @@ const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigation();
+  const gitHubImageURL =
+    "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png";
 
   const handleSignUp = () => {
     //Validation checks for registration
@@ -69,7 +71,13 @@ const LoginScreen = () => {
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <Text style={styles.textStyle}>Welcome!</Text>
+      <Image
+        style={styles.stretch}
+        source={{
+          uri: gitHubImageURL,
+        }}
+      />
+      <Text style={styles.textStyle}>Hello!</Text>
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Email"
@@ -105,6 +113,11 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "700",
     paddingVertical: 20,
+  },
+  stretch: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
   },
 
   container: {
