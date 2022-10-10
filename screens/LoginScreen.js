@@ -95,13 +95,13 @@ const LoginScreen = () => {
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={handleLogin} style={styles.button}>
-          <Text style={[styles.buttonText, styles.buttonOutline]}>Login</Text>
+          <Text style={[styles.buttonText]}>Login</Text>
         </TouchableOpacity>
 
+        <View paddingVertical={5}></View>
+
         <TouchableOpacity onPress={handleSignUp} style={styles.button}>
-          <Text style={[styles.buttonText, styles.buttonOutline]}>
-            Register
-          </Text>
+          <Text style={[styles.buttonText]}>Register</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
@@ -134,16 +134,21 @@ const styles = StyleSheet.create({
     paddingVertical: 2,
     borderRadius: 10,
     marginTop: 5,
+    height: 30,
   },
   button: {
-    backgroundColor: "#0782F9",
+    backgroundColor: "#000ffa",
     padding: 5,
     borderRadius: 10,
     alignItems: "center",
+    justifyContent: "center",
+    height: 50,
+    width: "80%",
   },
   buttonContainer: {
     alignItems: "center",
-    marginTop: 20,
+    marginTop: 50,
+    width: "100%",
   },
   buttonOutline: {
     marginTop: 2,
