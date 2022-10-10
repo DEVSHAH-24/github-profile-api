@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { render } from "react-dom";
 import {
   ActivityIndicator,
   FlatList,
@@ -7,6 +8,8 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
+import { WebView } from "react-native-webview";
+import WebViewComponent from "./WebView";
 
 function PublicRepos({ userData }) {
   const [repoData, setRepoData] = useState({});
@@ -24,6 +27,11 @@ function PublicRepos({ userData }) {
       setUserData({});
     }
   };
+  const renderWebView = (uri) => {
+    console.log(uri);
+
+    return <WebViewComponent uri={uri} />;
+  };
   useEffect(() => {
     getRepoData();
   }, [userData]);
@@ -35,12 +43,19 @@ function PublicRepos({ userData }) {
       ) : (
         <FlatList
           data={repoData}
-          keyExtractor={({ id }, index) => id}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={({ id }) => id}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.item}>
+            <TouchableOpacity
+              style={styles.item}
+              onPress={() => <WebViewComponent uri={item.clone_url} />}
+            >
               <Text style={[styles.textStyle]}>
                 {item.name}
                 {"\n"}
+              </Text>
+              <Text>
+                {item.language} {"\n"}
               </Text>
               <Text>{item.description}</Text>
             </TouchableOpacity>
