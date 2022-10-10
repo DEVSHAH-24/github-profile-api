@@ -11,9 +11,6 @@ function PublicRepos({ userData }) {
   const [repoData, setRepoData] = useState({});
 
   const getRepoData = async () => {
-    // axios.get(gitHubUrl).then((response)=> {
-    //   response.message !== "Not Found" ? setUserData(response) : console.log
-    // })
     const response = await fetch(userData.repos_url);
     const jsonData = await response.json();
     if (jsonData && jsonData.message !== "Not Found") {
@@ -37,7 +34,6 @@ function PublicRepos({ userData }) {
       ) : (
         <FlatList
           data={repoData}
-          scrollEnabled={false}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
             <TouchableOpacity style={styles.item}>

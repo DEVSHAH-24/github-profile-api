@@ -18,7 +18,7 @@ function UserInfoCard({ userData }) {
         {userData.name != null ? userData.name : "Name"}
       </Text>
       <Text>
-        {userData.login == null ? "Login ID will appear here" : userData.login}
+        {userData.login == null ? "User ID will appear here" : userData.login}
       </Text>
     </View>
   );
@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   container: {
-    //  flexDirection: "horizontal",
     alignItems: "center",
     padding: 35,
   },

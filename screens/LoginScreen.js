@@ -9,7 +9,6 @@ import React, { useEffect, useState } from "react";
 import { TouchableOpacity } from "react-native";
 import { auth } from "../firebase";
 import {
-  getAuth,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -22,23 +21,43 @@ const LoginScreen = () => {
   const navigation = useNavigation();
 
   const handleSignUp = () => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredentials) => {
-        const user = userCredentials.user;
-        console.log(user.email);
-      })
-      .catch((e) => alert(e.message));
+    //Validation checks for registration
+    validateLogin(password, email)
+      ? createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredentials) => {
+            const user = userCredentials.user;
+            console.log(user.email);
+          })
+          .catch((e) => alert(e.message))
+      : null;
   };
 
   const handleLogin = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredentials) => {
-        const user = userCredentials.user;
-        console.log(user.email);
-        navigation.navigate("Home");
-      })
-      .catch((e) => alert(e.message));
+    validateLogin(password, email)
+      ? signInWithEmailAndPassword(auth, email, password)
+          .then((userCredentials) => {
+            const user = userCredentials.user;
+            console.log(user.email);
+            navigation.navigate("Home");
+          })
+          .catch((e) => alert(e.message))
+      : null;
   };
+  const validateLogin = (password, email) => {
+    if (!email.includes("@") || email.includes(" ")) {
+      alert("Please check your email input");
+      return false;
+    } else if (password.length < 6) {
+      alert("Password should be of atleast 6 characters");
+      return false;
+    } else if (password.includes(" ")) {
+      alert("Password should not contain empty spaces");
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -108,17 +127,12 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 10,
     alignItems: "center",
-    // justifyContent: "center",
-    // textAlign: "center",
   },
   buttonContainer: {
-    // width: "60%",
-    // justifyContent: "center",
     alignItems: "center",
     marginTop: 20,
   },
   buttonOutline: {
-    // backgroundColor: "green",
     marginTop: 2,
     borderColor: "#0782F9",
     borderWidth: 2,

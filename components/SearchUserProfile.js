@@ -1,24 +1,12 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  TouchableOpacity,
-  TouchableHighlight,
-  Alert,
-} from "react-native";
+import { StyleSheet, Text, View, Button, Alert } from "react-native";
 import { useEffect, useState } from "react";
-import SearchBarFcn from "./SearchBar";
 import { Searchbar } from "react-native-paper";
 import UserInfoCard from "./Info";
-import axios from "axios";
 import PublicRepos from "./publicRepos";
 import { signOut } from "firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 import { auth } from "../firebase";
-import { SafeAreaView } from "react-native";
-import { ScrollView } from "react-native";
 
 function Main() {
   const [userData, setUserData] = useState({});
@@ -27,9 +15,6 @@ function Main() {
   var gitHubUrl = `https://api.github.com/users/${currentName}`;
 
   const getUserData = async () => {
-    // axios.get(gitHubUrl).then((response)=> {
-    //   response.message !== "Not Found" ? setUserData(response) : console.log
-    // })
     const response = await fetch(gitHubUrl);
     const jsonData = await response.json();
     if (jsonData && jsonData.message !== "Not Found") {
@@ -43,9 +28,6 @@ function Main() {
       setUserData({});
     }
   };
-  // useEffect(() => {
-  // }, [username]);
-  // const onChangeSearch = query => setUsername(query);
   const navigation = useNavigation();
   const handleSignOut = () => {
     signOut(auth)
@@ -57,34 +39,28 @@ function Main() {
   };
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <View style={styles.searchLogout}>
-          <Searchbar
-            placeholder="Search"
-            onChangeText={(e) => setCurrentName(e)}
-            onIconPress={() => getUserData()}
-          />
-          <Button title="Logout" onPress={handleSignOut}></Button>
-        </View>
-        <View style={styles.container}>
-          <UserInfoCard userData={userData} />
-        </View>
-
-        <View style={styles.container}>
-          <Text style={styles.titleStyle}>Public repos</Text>
-          <PublicRepos userData={userData} />
-        </View>
+    <View style={styles.container}>
+      <View style={styles.searchLogout}>
+        <Searchbar
+          placeholder="Search"
+          onChangeText={(e) => setCurrentName(e)}
+          onIconPress={() => getUserData()}
+        />
+        <Button title="Logout" onPress={handleSignOut}></Button>
       </View>
-    </ScrollView>
+      <View style={styles.container}>
+        <UserInfoCard userData={userData} />
+      </View>
+
+      <View style={styles.container}>
+        <Text style={styles.titleStyle}>Public repos</Text>
+        <PublicRepos userData={userData} />
+      </View>
+    </View>
   );
 }
 const styles = StyleSheet.create({
-  // outerContainer: {
-  //   backgroundColor: "grey",
-  // },
   container: {
-    //  flexDirection: "horizontal",
     alignItems: "center",
     paddingHorizontal: 25,
   },
