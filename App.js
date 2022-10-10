@@ -1,14 +1,17 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 import { getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import Main from "./components/SearchUserProfile";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "./screens/LoginScreen";
-
+import { Appbar } from "react-native-paper";
+import { signOut } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+import { useNavigation } from "@react-navigation/native";
+import LogOutButton from "./components/LogOutButton";
 
 const Stack = createNativeStackNavigator();
 const firebaseConfig = {
@@ -32,7 +35,14 @@ export default function App() {
           name="Login"
           component={LoginScreen}
         />
-        <Stack.Screen name="Home" component={Main} />
+        <Stack.Screen
+          name="Home"
+          component={Main}
+          options={{
+            headerLeft: () => <View />,
+            headerRight: () => <LogOutButton />,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -47,3 +57,11 @@ const styles = StyleSheet.create({
   },
   outerContainer: {},
 });
+
+// const LogOutNavigation = () => {
+//   return (
+//     <Appbar.Header>
+//       <Appbar.children title="My awesome app" />
+//     </Appbar.Header>
+//   );
+// };

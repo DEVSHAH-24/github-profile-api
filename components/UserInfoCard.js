@@ -17,8 +17,17 @@ function UserInfoCard({ userData }) {
       <Text style={styles.textStyle}>
         {userData.name != null ? userData.name : "Name"}
       </Text>
-      <Text>
-        {userData.login == null ? "User ID will appear here" : userData.login}
+      <Text style={styles.subheadingTextStyle}>
+        {userData.login == null
+          ? "User ID will appear here"
+          : userData.location}
+      </Text>
+      <Text style={styles.subheadingTextStyle}>
+        {userData.login != null
+          ? userData.hireable !== true
+            ? "Not hireable"
+            : "Hireable"
+          : ""}
       </Text>
     </View>
   );
@@ -38,6 +47,11 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     padding: 35,
+  },
+  subheadingTextStyle: {
+    fontSize: 15,
+    fontWeight: "400",
+    paddingVertical: 5,
   },
 });
 export default UserInfoCard;

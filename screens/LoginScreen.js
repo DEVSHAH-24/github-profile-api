@@ -13,7 +13,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
