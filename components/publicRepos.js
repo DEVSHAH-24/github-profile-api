@@ -10,8 +10,11 @@ import {
 } from "react-native";
 import { WebView } from "react-native-webview";
 import WebViewComponent from "./WebView";
+import { useNavigation } from "@react-navigation/native";
 
 function PublicRepos({ userData }) {
+  const navigation = useNavigation();
+
   const [repoData, setRepoData] = useState({});
 
   const getRepoData = async () => {
@@ -27,11 +30,11 @@ function PublicRepos({ userData }) {
       setUserData({});
     }
   };
-  const renderWebView = (uri) => {
-    console.log(uri);
+  // const renderWebView = (uri) => {
+  //   console.log(uri);
 
-    return <WebViewComponent uri={uri} />;
-  };
+  //   return <WebViewComponent uri={uri} />;
+  // };
   useEffect(() => {
     getRepoData();
   }, [userData]);
@@ -48,7 +51,9 @@ function PublicRepos({ userData }) {
           renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.item}
-              onPress={() => <WebViewComponent uri={item.clone_url} />}
+              onPress={() =>
+                navigation.navigate("Webview", { uri: item.clone_url })
+              }
             >
               <Text style={[styles.textStyle]}>
                 {item.name}

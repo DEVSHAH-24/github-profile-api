@@ -12,6 +12,7 @@ import { signOut } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { useNavigation } from "@react-navigation/native";
 import LogOutButton from "./components/LogOutButton";
+import WebViewComponent from "./components/WebView";
 
 const Stack = createNativeStackNavigator();
 const firebaseConfig = {
@@ -42,6 +43,11 @@ export default function App() {
             headerLeft: () => <View />,
             headerRight: () => <LogOutButton />,
           }}
+        />
+        <Stack.Screen
+          options={{}}
+          name="Webview"
+          component={WebViewComponent}
         />
       </Stack.Navigator>
     </NavigationContainer>
