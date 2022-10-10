@@ -45,8 +45,17 @@ const LoginScreen = () => {
           .catch((e) => alert(e.message))
       : null;
   };
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
   const validateLogin = (password, email) => {
-    if (!email.includes("@") || email.includes(" ")) {
+    //regex validation for email
+
+    if (!validateEmail(email)) {
       alert("Please check your email input");
       return false;
     } else if (password.length < 6) {
