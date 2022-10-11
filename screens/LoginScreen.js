@@ -1,19 +1,20 @@
-import {
-  KeyboardAvoidingView,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-} from "react-native";
-import React, { useEffect, useState } from "react";
-import { TouchableOpacity, Image } from "react-native";
-import { auth } from "../firebase";
+import { useNavigation } from "@react-navigation/native";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { useNavigation } from "@react-navigation/native";
+import React, { useEffect, useState } from "react";
+import {
+  Image,
+  KeyboardAvoidingView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { auth } from "../firebase";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");

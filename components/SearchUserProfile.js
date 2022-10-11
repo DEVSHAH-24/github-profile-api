@@ -1,12 +1,9 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View, Button, Alert } from "react-native";
-import { useEffect, useState } from "react";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+
 import { Searchbar } from "react-native-paper";
-import UserInfoCard from "./UserInfoCard";
 import PublicRepos from "./PublicRepos";
-import { signOut } from "firebase/auth";
-import { useNavigation } from "@react-navigation/native";
-import { auth } from "../firebase";
+import UserInfoCard from "./UserInfoCard";
 
 function Main() {
   const [userData, setUserData] = useState({});

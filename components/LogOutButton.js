@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { signOut } from "firebase/auth";
-import { auth } from "../firebase";
 import { useNavigation } from "@react-navigation/native";
+import { signOut } from "firebase/auth";
+import React from "react";
 import { Button } from "react-native";
+import { auth } from "../firebase";
 
 const LogOutButton = () => {
   const navigation = useNavigation();

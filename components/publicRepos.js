@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { render } from "react-dom";
-import {
-  ActivityIndicator,
-  FlatList,
-  Text,
-  View,
-  TouchableOpacity,
-  StyleSheet,
-} from "react-native";
-import { WebView } from "react-native-webview";
-import WebViewComponent from "./WebView";
 import { useNavigation } from "@react-navigation/native";
-import { ScrollView } from "react-native-web";
+import React, { useEffect, useState } from "react";
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 function PublicRepos({ userData }) {
   const navigation = useNavigation();
