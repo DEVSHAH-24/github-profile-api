@@ -47,7 +47,7 @@ function Main() {
           onIconPress={() => getUserData()}
         />
       </View>
-      <View style={styles.container}>
+      <View>
         <UserInfoCard userData={userData} />
       </View>
 
