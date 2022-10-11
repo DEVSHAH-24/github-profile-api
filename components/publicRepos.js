@@ -1,12 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { appStyles } from "./appStyles";
 
 function PublicRepos({ userData }) {
   const navigation = useNavigation();
@@ -48,16 +43,16 @@ function PublicRepos({ userData }) {
         keyExtractor={({ id }) => id}
         renderItem={({ item }) => (
           <TouchableOpacity
-            style={styles.item}
+            style={appStyles.item}
             onPress={() =>
               navigation.navigate("Webview", { uri: item.clone_url })
             }
           >
-            <Text style={[styles.textStyle]}>
+            <Text style={[appStyles.itemTextStyle]}>
               {item.name}
               {"\n"}
             </Text>
-            <Text style={styles.mutedText}>
+            <Text style={appStyles.mutedText}>
               {item.language} {"\n"}
             </Text>
             <Text>{item.description}</Text>
@@ -67,21 +62,21 @@ function PublicRepos({ userData }) {
     </View>
   );
 }
-const styles = StyleSheet.create({
-  textStyle: {
-    fontSize: 16,
-    fontWeight: "700",
-  },
-  item: {
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    backgroundColor: "#ddd8e6",
-    borderRadius: 25,
-  },
-  mutedText: {
-    fontWeight: "bold",
-    color: "grey",
-  },
-});
+// const appStyles = appStylesheet.create({
+//   itemTextStyle: {
+//     fontSize: 16,
+//     fontWeight: "700",
+//   },
+//   item: {
+//     padding: 20,
+//     marginVertical: 8,
+//     marginHorizontal: 16,
+//     backgroundColor: "#ddd8e6",
+//     borderRadius: 25,
+//   },
+//   mutedText: {
+//     fontWeight: "bold",
+//     color: "grey",
+//   },
+// });
 export default PublicRepos;

@@ -1,13 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, Image } from "react-native";
 import { View } from "react-native";
+import { appStyles } from "./appStyles";
 
 function UserInfoCard({ userData }) {
   console.log(userData);
   return (
-    <View style={styles.container}>
+    <View style={appStyles.userContainer}>
       <Image
-        style={styles.stretch}
+        style={appStyles.stretch}
         source={{
           uri:
             userData?.avatar_url === undefined
@@ -16,32 +17,35 @@ function UserInfoCard({ userData }) {
         }}
       />
       {userData?.name === undefined ? (
-        <Text style={styles.textStyle}>Name</Text>
+        <Text style={appStyles.textStyle}>Name</Text>
       ) : userData.name != null ? (
-        <Text style={styles.textStyle}>{userData.name}</Text>
+        <Text style={appStyles.textStyle}>{userData.name}</Text>
       ) : (
         <Text
-          style={[styles.textStyle, { fontStyle: "italic", fontWeight: "200" }]}
+          style={[
+            appStyles.textStyle,
+            { fontStyle: "italic", fontWeight: "200" },
+          ]}
         >
           Name not available
         </Text>
       )}
 
       {userData?.location === undefined ? (
-        <Text style={styles.subheadingTextStyle}>
+        <Text style={appStyles.subheadingTextStyle}>
           Location will appear here
         </Text>
       ) : userData.location !== null ? (
-        <Text style={styles.subheadingTextStyle}>{userData.location}</Text>
+        <Text style={appStyles.subheadingTextStyle}>{userData.location}</Text>
       ) : null}
 
-      {/* <Text style={styles.subheadingTextStyle}>
+      {/* <Text style={appStyles.subheadingTextStyle}>
         {userData?.location === undefined
           ? "Location will appear here"
           : userData.location}
       </Text> */}
 
-      <Text style={styles.subheadingTextStyle}>
+      <Text style={appStyles.subheadingTextStyle}>
         {userData?.login !== undefined
           ? userData.hireable !== true
             ? "Not hireable"
@@ -52,25 +56,25 @@ function UserInfoCard({ userData }) {
   );
 }
 
-const styles = StyleSheet.create({
-  stretch: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-  },
-  textStyle: {
-    fontSize: 25,
-    fontWeight: "700",
-    paddingVertical: 20,
-  },
-  container: {
-    alignItems: "center",
-    padding: 35,
-  },
-  subheadingTextStyle: {
-    fontSize: 15,
-    fontWeight: "400",
-    paddingVertical: 5,
-  },
-});
+// const appStyles = StyleSheet.create({
+//   stretch: {
+//     width: 100,
+//     height: 100,
+//     borderRadius: 50,
+//   },
+//   textStyle: {
+//     fontSize: 25,
+//     fontWeight: "700",
+//     paddingVertical: 20,
+//   },
+//   container: {
+//     alignItems: "center",
+//     padding: 35,
+//   },
+//   subheadingTextStyle: {
+//     fontSize: 15,
+//     fontWeight: "400",
+//     paddingVertical: 5,
+//   },
+// });
 export default UserInfoCard;

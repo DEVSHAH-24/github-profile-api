@@ -7,13 +7,5 @@ const WebViewComponent = ({ route, navigation }) => {
   console.log(screenName);
   return <WebView source={{ uri: screenName.uri }} />;
 };
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  text: {
-    fontSize: 25,
-    fontWeight: "500",
-  },
-});
+
 export default WebViewComponent;

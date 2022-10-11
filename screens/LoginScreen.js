@@ -14,6 +14,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { appStyles } from "../components/appStyles";
 import { auth } from "../firebase";
 
 const LoginScreen = () => {
@@ -82,96 +83,99 @@ const LoginScreen = () => {
   }, []);
 
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
+    <KeyboardAvoidingView
+      style={appStyles.loginScreenContainer}
+      behavior="padding"
+    >
       <Image
-        style={styles.stretch}
+        style={appStyles.stretch}
         source={{
           uri: gitHubImageURL,
         }}
       />
-      <Text style={styles.textStyle}>Hello!</Text>
-      <View style={styles.inputContainer}>
+      <Text style={appStyles.textStyle}>Hello!</Text>
+      <View style={appStyles.inputContainer}>
         <TextInput
           placeholder="Email"
           value={email}
           onChangeText={(text) => setEmail(text)}
-          style={styles.input}
+          style={appStyles.input}
         />
         <TextInput
           placeholder="Password"
           secureTextEntry
-          style={styles.input}
+          style={appStyles.input}
           value={password}
           onChangeText={(text) => setPassword(text)}
         />
       </View>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={handleLogin} style={styles.button}>
-          <Text style={[styles.buttonText]}>Login</Text>
+      <View style={appStyles.buttonContainer}>
+        <TouchableOpacity onPress={handleLogin} style={appStyles.button}>
+          <Text style={[appStyles.buttonText]}>Login</Text>
         </TouchableOpacity>
 
         <View paddingVertical={5}></View>
 
-        <TouchableOpacity onPress={handleSignUp} style={styles.button}>
-          <Text style={[styles.buttonText]}>Register</Text>
+        <TouchableOpacity onPress={handleSignUp} style={appStyles.button}>
+          <Text style={[appStyles.buttonText]}>Register</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
   );
 };
 
-const styles = StyleSheet.create({
-  textStyle: {
-    fontSize: 25,
-    fontWeight: "700",
-    paddingVertical: 20,
-  },
-  stretch: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-  },
+// const appStyles = StyleSheet.create({
+//   textStyle: {
+//     fontSize: 25,
+//     fontWeight: "700",
+//     paddingVertical: 20,
+//   },
+//   stretch: {
+//     width: 100,
+//     height: 100,
+//     borderRadius: 50,
+//   },
 
-  container: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1,
-  },
-  inputContainer: {
-    width: "80%",
-  },
-  input: {
-    backgroundColor: "white",
-    paddingHorizontal: 15,
-    paddingVertical: 2,
-    borderRadius: 10,
-    marginTop: 5,
-    height: 30,
-  },
-  button: {
-    backgroundColor: "#000ffa",
-    padding: 5,
-    borderRadius: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    height: 50,
-    width: "80%",
-  },
-  buttonContainer: {
-    alignItems: "center",
-    marginTop: 50,
-    width: "100%",
-  },
-  buttonOutline: {
-    marginTop: 2,
-    borderColor: "#0782F9",
-    borderWidth: 2,
-  },
-  buttonText: {
-    color: "white",
-    fontWeight: "700",
-    fontSize: 16,
-    alignItems: "center",
-  },
-});
+//   loginScreenContainer: {
+//     justifyContent: "center",
+//     alignItems: "center",
+//     flex: 1,
+//   },
+//   inputContainer: {
+//     width: "80%",
+//   },
+//   input: {
+//     backgroundColor: "white",
+//     paddingHorizontal: 15,
+//     paddingVertical: 2,
+//     borderRadius: 10,
+//     marginTop: 5,
+//     height: 30,
+//   },
+//   button: {
+//     backgroundColor: "#000ffa",
+//     padding: 5,
+//     borderRadius: 10,
+//     alignItems: "center",
+//     justifyContent: "center",
+//     height: 50,
+//     width: "80%",
+//   },
+//   buttonContainer: {
+//     alignItems: "center",
+//     marginTop: 50,
+//     width: "100%",
+//   },
+//   buttonOutline: {
+//     marginTop: 2,
+//     borderColor: "#0782F9",
+//     borderWidth: 2,
+//   },
+//   buttonText: {
+//     color: "white",
+//     fontWeight: "700",
+//     fontSize: 16,
+//     alignItems: "center",
+//   },
+// });
 export default LoginScreen;

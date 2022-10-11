@@ -1,7 +1,9 @@
 import React from "react";
+import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import { Searchbar } from "react-native-paper";
+import { appStyles } from "./appStyles";
 import PublicRepos from "./PublicRepos";
 import UserInfoCard from "./UserInfoCard";
 
@@ -36,8 +38,8 @@ function Main() {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.searchLogout}>
+    <View style={appStyles.container}>
+      <View style={appStyles.searchLogout}>
         <Searchbar
           placeholder="Search"
           onChangeText={(e) => setCurrentName(e)}
@@ -48,30 +50,30 @@ function Main() {
         <UserInfoCard userData={userData} />
       </View>
 
-      <View style={styles.container}>
-        <Text style={styles.titleStyle}>Public repositories</Text>
+      <View style={appStyles.container}>
+        <Text style={appStyles.titleStyle}>Public repositories</Text>
         <PublicRepos userData={userData} />
       </View>
     </View>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    paddingHorizontal: 5,
-    flex: 1,
-  },
-  searchLogout: {
-    flexDirection: "row",
-    alignItems: "space-between",
-    padding: 10,
-    alignContent: "space-between",
-  },
-  titleStyle: {
-    fontSize: 20,
-    fontWeight: "500",
-    paddingVertical: 10,
-    color: "green",
-  },
-});
+// const appStyles = StyleSheet.create({
+//   container: {
+//     alignItems: "center",
+//     paddingHorizontal: 5,
+//     flex: 1,
+//   },
+//   searchLogout: {
+//     flexDirection: "row",
+//     alignItems: "space-between",
+//     padding: 10,
+//     alignContent: "space-between",
+//   },
+//   titleStyle: {
+//     fontSize: 20,
+//     fontWeight: "500",
+//     paddingVertical: 10,
+//     color: "green",
+//   },
+// });
 export default Main;
