@@ -18,55 +18,54 @@ function PublicRepos({ userData }) {
   const [repoData, setRepoData] = useState({});
 
   const getRepoData = async () => {
-    const response = await fetch(userData.repos_url);
-    const jsonData = await response.json();
-    if (jsonData && jsonData.message !== "Not Found") {
-      setRepoData(jsonData);
-      console.log(jsonData);
-    } else if (repoData !== "") {
-      console.log("Username does not exist");
-    } else {
-      console.log("case 3");
-      setUserData({});
+    console.log("this is", repoData);
+    try {
+      const response = await fetch(userData.repos_url);
+      const jsonData = await response.json();
+      if (jsonData && jsonData.message !== "Not Found") {
+        setRepoData(jsonData);
+        console.log(jsonData);
+      } else if (repoData !== "") {
+        console.log("Username does not exist");
+      } else {
+        console.log("case 3");
+        setUserData({});
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
-  // const renderWebView = (uri) => {
-  //   console.log(uri);
 
-  //   return <WebViewComponent uri={uri} />;
-  // };
   useEffect(() => {
-    getRepoData();
+    if (userData?.repos_url) {
+      getRepoData();
+    }
   }, [userData]);
 
   return (
-    <View style={{ flex: 1, padding: 24 }}>
-      {repoData == null ? (
-        <ActivityIndicator />
-      ) : (
-        <FlatList
-          data={repoData}
-          showsVerticalScrollIndicator={false}
-          keyExtractor={({ id }) => id}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              style={styles.item}
-              onPress={() =>
-                navigation.navigate("Webview", { uri: item.clone_url })
-              }
-            >
-              <Text style={[styles.textStyle]}>
-                {item.name}
-                {"\n"}
-              </Text>
-              <Text>
-                {item.language} {"\n"}
-              </Text>
-              <Text>{item.description}</Text>
-            </TouchableOpacity>
-          )}
-        />
-      )}
+    <View style={{ flex: 1, paddingBottom: 1000 }}>
+      <FlatList
+        data={repoData}
+        showsVerticalScrollIndicator={false}
+        keyExtractor={({ id }) => id}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            style={styles.item}
+            onPress={() =>
+              navigation.navigate("Webview", { uri: item.clone_url })
+            }
+          >
+            <Text style={[styles.textStyle]}>
+              {item.name}
+              {"\n"}
+            </Text>
+            <Text style={styles.mutedText}>
+              {item.language} {"\n"}
+            </Text>
+            <Text>{item.description}</Text>
+          </TouchableOpacity>
+        )}
+      />
     </View>
   );
 }
@@ -81,6 +80,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     backgroundColor: "#ddd8e6",
     borderRadius: 25,
+  },
+  mutedText: {
+    fontWeight: "bold",
+    color: "grey",
   },
 });
 export default PublicRepos;

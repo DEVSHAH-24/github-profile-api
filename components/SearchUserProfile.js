@@ -15,21 +15,28 @@ function Main() {
   var gitHubUrl = `https://api.github.com/users/${currentName}`;
 
   const getUserData = async () => {
-    const response = await fetch(gitHubUrl);
-    const jsonData = await response.json();
-    if (jsonData && jsonData.message !== "Not Found") {
-      // CHECK THE REDUNDANCY HERE
-      setUserData(jsonData);
-      console.log(jsonData);
-    } else if (username !== "") {
-      console.log("Username does not exist");
-      setUserData({});
-    } else {
-      alert("Username not found", "Please try a different username");
-      setUserData({});
+    try {
+      if (currentName !== "") {
+        const response = await fetch(gitHubUrl);
+        const jsonData = await response.json();
+        if (jsonData && jsonData.message !== "Not Found") {
+          // CHECK THE REDUNDANCY HERE
+          setUserData(jsonData);
+          console.log(jsonData);
+        } else if (jsonData.message === "Not found") {
+          alert("Username not found", "Please try a different username");
+
+          console.log("Username does not exist");
+          setUserData({});
+        } else {
+          alert("Username not found", "Please try a different username");
+          setUserData({});
+        }
+      }
+    } catch (error) {
+      console.log(error, "error msg");
     }
   };
-  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -45,7 +52,7 @@ function Main() {
       </View>
 
       <View style={styles.container}>
-        <Text style={styles.titleStyle}>Public repos</Text>
+        <Text style={styles.titleStyle}>Public repositories</Text>
         <PublicRepos userData={userData} />
       </View>
     </View>

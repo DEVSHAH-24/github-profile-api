@@ -40,7 +40,7 @@ const LoginScreen = () => {
           .then((userCredentials) => {
             const user = userCredentials.user;
             console.log(user.email);
-            navigation.navigate("Home");
+            //  navigation.navigate("Home");
           })
           .catch((e) => alert(e.message))
       : null;
@@ -72,7 +72,9 @@ const LoginScreen = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
+        console.log("before nav");
         navigation.navigate("Home");
+        console.log("after nav");
       }
     });
     return unsubscribe;

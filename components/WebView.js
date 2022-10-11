@@ -8,11 +8,7 @@ import { styleProps } from "react-native-web/dist/cjs/modules/forwardedProps";
 const WebViewComponent = ({ route, navigation }) => {
   const screenName = route.params;
   console.log(screenName);
-  return (
-    <SafeAreaView style={styles.container}>
-      <WebView source={{ uri: screenName.uri }} />
-    </SafeAreaView>
-  );
+  return <WebView source={{ uri: screenName.uri }} />;
 };
 const styles = StyleSheet.create({
   container: {
