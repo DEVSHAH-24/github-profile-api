@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     paddingHorizontal: 5,
+    flex: 1,
   },
   searchLogout: {
     flexDirection: "row",

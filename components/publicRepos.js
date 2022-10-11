@@ -11,6 +11,7 @@ import {
 import { WebView } from "react-native-webview";
 import WebViewComponent from "./WebView";
 import { useNavigation } from "@react-navigation/native";
+import { ScrollView } from "react-native-web";
 
 function PublicRepos({ userData }) {
   const navigation = useNavigation();
@@ -43,9 +44,11 @@ function PublicRepos({ userData }) {
   }, [userData]);
 
   return (
-    <View style={{ flex: 1, paddingBottom: 1000 }}>
+    <View style={{ flex: 1 }}>
       <FlatList
         data={repoData}
+        scrollEnabled={true}
+        // scrollToOverflowEnabled={true}
         showsVerticalScrollIndicator={false}
         keyExtractor={({ id }) => id}
         renderItem={({ item }) => (
