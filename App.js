@@ -16,7 +16,7 @@ import WebViewComponent from "./components/WebView";
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+export function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -42,3 +42,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+export default App;
