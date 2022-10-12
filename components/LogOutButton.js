@@ -6,7 +6,6 @@ import { auth } from "../firebase";
 
 const LogOutButton = () => {
   const navigation = useNavigation();
-  console.log("this is auth -> ", auth);
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {

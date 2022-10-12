@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginScreen Snapshot 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      },
+      Object {
+        "paddingBottom": 0,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 50,
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "fontSize": 25,
+        "fontWeight": "700",
+        "paddingVertical": 20,
+      }
+    }
+  >
+    Hello!
+  </Text>
+  <View
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  >
+    <TextInput
+      onChangeText={[Function]}
+      placeholder="Email"
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": 10,
+          "height": 30,
+          "marginTop": 5,
+          "paddingHorizontal": 15,
+          "paddingVertical": 2,
+        }
+      }
+      value=""
+    />
+    <TextInput
+      onChangeText={[Function]}
+      placeholder="Password"
+      secureTextEntry={true}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": 10,
+          "height": 30,
+          "marginTop": 5,
+          "paddingHorizontal": 15,
+          "paddingVertical": 2,
+        }
+      }
+      value=""
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "marginTop": 50,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#000ffa",
+          "borderRadius": 10,
+          "height": 50,
+          "justifyContent": "center",
+          "opacity": 1,
+          "padding": 5,
+          "width": "80%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "color": "white",
+              "fontSize": 16,
+              "fontWeight": "700",
+            },
+          ]
+        }
+      >
+        Login
+      </Text>
+    </View>
+    <View
+      paddingVertical={5}
+    />
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#000ffa",
+          "borderRadius": 10,
+          "height": 50,
+          "justifyContent": "center",
+          "opacity": 1,
+          "padding": 5,
+          "width": "80%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "color": "white",
+              "fontSize": 16,
+              "fontWeight": "700",
+            },
+          ]
+        }
+      >
+        Register
+      </Text>
+    </View>
+  </View>
+</View>
+`;
