@@ -14,7 +14,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { appStyles } from "../components/styles/appStyles";
+import { appStyles } from "../styles/appStyles";
 import { auth } from "../firebase";
 
 const LoginScreen = () => {

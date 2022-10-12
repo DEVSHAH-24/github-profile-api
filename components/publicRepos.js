@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
-import { appStyles } from "./styles/appStyles";
+import { appStyles } from "../styles/appStyles";
 
 function PublicRepos({ userData }) {
   const navigation = useNavigation();
@@ -17,7 +17,6 @@ function PublicRepos({ userData }) {
         setRepoData(jsonData);
         console.log(jsonData);
       } else if (repoData !== "") {
-        console.log("Username does not exist");
       } else {
         console.log("case 3");
         setUserData({});

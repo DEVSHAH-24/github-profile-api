@@ -3,7 +3,7 @@ import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import { Searchbar } from "react-native-paper";
-import { appStyles } from "../components/styles/appStyles";
+import { appStyles } from "../styles/appStyles";
 import PublicRepos from "../components/PublicRepos";
 import UserInfoCard from "../components/UserInfoCard";
 
