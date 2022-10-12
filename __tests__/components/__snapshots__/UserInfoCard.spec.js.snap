@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserInfoCard Snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "padding": 35,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://reactnative.dev/img/tiny_logo.png",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 50,
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "fontSize": 25,
+        "fontWeight": "700",
+        "paddingVertical": 20,
+      }
+    }
+  >
+    Name
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 15,
+        "fontWeight": "400",
+        "paddingVertical": 5,
+      }
+    }
+  >
+    Location will appear here
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 15,
+        "fontWeight": "400",
+        "paddingVertical": 5,
+      }
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`UserInfoCard Snapshot with Data 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "padding": 35,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://avatars.githubusercontent.com/u/11337871?v=4",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 50,
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "fontSize": 25,
+        "fontWeight": "700",
+        "paddingVertical": 20,
+      }
+    }
+  >
+    DEBAJIT DEB
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 15,
+        "fontWeight": "400",
+        "paddingVertical": 5,
+      }
+    }
+  >
+    India
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 15,
+        "fontWeight": "400",
+        "paddingVertical": 5,
+      }
+    }
+  >
+    Hireable
+  </Text>
+</View>
+`;
+
+exports[`UserInfoCard Snapshot with some data 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "padding": 35,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": null,
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 50,
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 25,
+          "fontWeight": "700",
+          "paddingVertical": 20,
+        },
+        Object {
+          "fontStyle": "italic",
+          "fontWeight": "200",
+        },
+      ]
+    }
+  >
+    Name not available
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 15,
+        "fontWeight": "400",
+        "paddingVertical": 5,
+      }
+    }
+  >
+    Not hireable
+  </Text>
+</View>
+`;

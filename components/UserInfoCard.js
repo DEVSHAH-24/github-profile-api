@@ -1,10 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, Image } from "react-native";
+import { Text, Image } from "react-native";
 import { View } from "react-native";
 import { appStyles } from "../styles/appStyles";
 
-function UserInfoCard({ userData }) {
-  console.log(userData);
+export function UserInfoCard({ userData }) {
   return (
     <View style={appStyles.userContainer}>
       <Image
@@ -38,12 +37,6 @@ function UserInfoCard({ userData }) {
       ) : userData.location !== null ? (
         <Text style={appStyles.subheadingTextStyle}>{userData.location}</Text>
       ) : null}
-
-      {/* <Text style={appStyles.subheadingTextStyle}>
-        {userData?.location === undefined
-          ? "Location will appear here"
-          : userData.location}
-      </Text> */}
 
       <Text style={appStyles.subheadingTextStyle}>
         {userData?.login !== undefined

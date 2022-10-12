@@ -1,10 +1,8 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 import { WebView } from "react-native-webview";
 
-const WebViewComponent = ({ route, navigation }) => {
+export const WebViewComponent = ({ route }) => {
   const screenName = route.params;
-  console.log(screenName);
   return <WebView source={{ uri: screenName.uri }} />;
 };
 

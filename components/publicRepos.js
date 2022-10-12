@@ -3,13 +3,12 @@ import React, { useEffect, useState } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import { appStyles } from "../styles/appStyles";
 
-function PublicRepos({ userData }) {
+export function PublicRepos({ userData }) {
   const navigation = useNavigation();
 
   const [repoData, setRepoData] = useState({});
 
   const getRepoData = async () => {
-    console.log("this is", repoData);
     try {
       const response = await fetch(userData.repos_url);
       const jsonData = await response.json();
@@ -40,7 +39,6 @@ function PublicRepos({ userData }) {
       <FlatList
         data={repoData}
         scrollEnabled={true}
-        // scrollToOverflowEnabled={true}
         showsVerticalScrollIndicator={false}
         keyExtractor={({ id }) => id}
         renderItem={({ item }) => (
