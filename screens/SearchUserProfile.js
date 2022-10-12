@@ -54,23 +54,5 @@ function Main() {
     </View>
   );
 }
-// const appStyles = StyleSheet.create({
-//   container: {
-//     alignItems: "center",
-//     paddingHorizontal: 5,
-//     flex: 1,
-//   },
-//   searchLogout: {
-//     flexDirection: "row",
-//     alignItems: "space-between",
-//     padding: 10,
-//     alignContent: "space-between",
-//   },
-//   titleStyle: {
-//     fontSize: 20,
-//     fontWeight: "500",
-//     paddingVertical: 10,
-//     color: "green",
-//   },
-// });
+
 export default Main;

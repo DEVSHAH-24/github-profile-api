@@ -56,25 +56,4 @@ function UserInfoCard({ userData }) {
   );
 }
 
-// const appStyles = StyleSheet.create({
-//   stretch: {
-//     width: 100,
-//     height: 100,
-//     borderRadius: 50,
-//   },
-//   textStyle: {
-//     fontSize: 25,
-//     fontWeight: "700",
-//     paddingVertical: 20,
-//   },
-//   container: {
-//     alignItems: "center",
-//     padding: 35,
-//   },
-//   subheadingTextStyle: {
-//     fontSize: 15,
-//     fontWeight: "400",
-//     paddingVertical: 5,
-//   },
-// });
 export default UserInfoCard;

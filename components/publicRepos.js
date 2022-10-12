@@ -65,21 +65,5 @@ function PublicRepos({ userData }) {
     </View>
   );
 }
-// const appStyles = appStylesheet.create({
-//   itemTextStyle: {
-//     fontSize: 16,
-//     fontWeight: "700",
-//   },
-//   item: {
-//     padding: 20,
-//     marginVertical: 8,
-//     marginHorizontal: 16,
-//     backgroundColor: "#ddd8e6",
-//     borderRadius: 25,
-//   },
-//   mutedText: {
-//     fontWeight: "bold",
-//     color: "grey",
-//   },
-// });
+
 export default PublicRepos;
