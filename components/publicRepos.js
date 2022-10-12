@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
-import { appStyles } from "./appStyles";
+import { appStyles } from "./styles/appStyles";
 
 function PublicRepos({ userData }) {
   const navigation = useNavigation();
@@ -34,7 +34,10 @@ function PublicRepos({ userData }) {
   }, [userData]);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={appStyles.container}>
+      <Text style={appStyles.titleStyle}>
+        Public repositories: {repoData.length}
+      </Text>
       <FlatList
         data={repoData}
         scrollEnabled={true}

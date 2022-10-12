@@ -96,4 +96,5 @@ export const appStyles = StyleSheet.create({
     alignItems: "center",
     flex: 1,
   },
+  publicRepoViewStyle: {},
 });

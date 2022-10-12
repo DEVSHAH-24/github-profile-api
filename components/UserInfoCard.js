@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, Image } from "react-native";
 import { View } from "react-native";
-import { appStyles } from "./appStyles";
+import { appStyles } from "./styles/appStyles";
 
 function UserInfoCard({ userData }) {
   console.log(userData);

@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
-import Main from "./components/SearchUserProfile";
+import Main from "./screens/SearchUserProfile";
 import LoginScreen from "./screens/LoginScreen";
 import LogOutButton from "./components/LogOutButton";
 import WebViewComponent from "./components/WebView";

@@ -3,9 +3,9 @@ import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import { Searchbar } from "react-native-paper";
-import { appStyles } from "./appStyles";
-import PublicRepos from "./PublicRepos";
-import UserInfoCard from "./UserInfoCard";
+import { appStyles } from "../components/styles/appStyles";
+import PublicRepos from "../components/PublicRepos";
+import UserInfoCard from "../components/UserInfoCard";
 
 function Main() {
   const [userData, setUserData] = useState({});
@@ -50,10 +50,7 @@ function Main() {
         <UserInfoCard userData={userData} />
       </View>
 
-      <View style={appStyles.container}>
-        <Text style={appStyles.titleStyle}>Public repositories</Text>
-        <PublicRepos userData={userData} />
-      </View>
+      <PublicRepos userData={userData} />
     </View>
   );
 }
