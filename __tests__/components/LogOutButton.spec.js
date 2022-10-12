@@ -38,11 +38,7 @@ describe("LogOutButton", () => {
     const component = getComponent();
 
     const testRenderer = TestRenderer.create(component);
-    const auth = {
-      apiKey: "AIzaSyClzkXRH_mOI-WyKvF7h3cSyQ-CLutaI7c",
-      authDomain: "github-api-66ce7.firebaseapp.com",
-      appName: "[DEFAULT]",
-    };
+
     // const handleSignOut = () => {
     //   signOut(auth)
     //     .then(() => {
