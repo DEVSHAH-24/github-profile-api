@@ -4,16 +4,17 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+
 import React, { useEffect, useState } from "react";
 import {
   Image,
   KeyboardAvoidingView,
-  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
+
 import { appStyles } from "../styles/appStyles";
 import { auth } from "../firebase";
 
