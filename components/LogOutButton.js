@@ -4,8 +4,9 @@ import React from "react";
 import { Button } from "react-native";
 import { auth } from "../firebase";
 
-const LogOutButton = () => {
+export const LogOutButton = () => {
   const navigation = useNavigation();
+
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -13,6 +14,8 @@ const LogOutButton = () => {
       })
       .catch((e) => alert(e.message));
   };
-  return <Button title="Logout" onPress={handleSignOut}></Button>;
+  return (
+    <Button testID="logout-btn" title="Logout" onPress={handleSignOut}></Button>
+  );
 };
 export default LogOutButton;

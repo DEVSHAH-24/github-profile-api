@@ -27,6 +27,7 @@
     "@react-navigation/native": "^6.0.11",
     "@react-navigation/native-stack": "^6.7.0",
     "@react-navigation/stack": "^6.2.2",
+    "@testing-library/react-native": "^11.2.0",
     "axios": "^0.27.2",
     "expo": "~45.0.0",
     "expo-splash-screen": "~0.15.1",
@@ -44,10 +45,12 @@
     "react-native-searchbar": "^1.16.0",
     "react-native-vector-icons": "^9.2.0",
     "react-native-web": "0.17.7",
-    "react-native-webview": "^11.23.1"
+    "react-native-webview": "^11.23.1",
+    "testing-library": "0.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@testing-library/jest-native": "^5.0.0",
     "react-test-renderer": "^17.0.2"
   },
   "private": true
