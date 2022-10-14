@@ -1,5 +1,5 @@
 import * as React from "react";
-import TestRenderer, { act } from "react-test-renderer";
+import TestRenderer, { act, create } from "react-test-renderer";
 import LogOutButton from "../../components/LogOutButton";
 import { render, fireEvent } from "@testing-library/react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -32,6 +32,13 @@ describe("LogOutButton", () => {
     fireEvent.press(button);
     expect(auth.currentUser).toBe(null);
     expect(component).toMatchSnapshot();
+  });
+  it("button on press 2", () => {
+    const component = getComponent();
+    const tree = create(component);
+    const button = tree.root.findByProps({ testID: "logout-btn" }).props;
+    act(() => button.onPress());
+    expect(auth.currentUser).toBeNull();
   });
   // it("button on press fail", () => {
   //   const component = getComponent();
