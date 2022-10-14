@@ -42,6 +42,7 @@ export const Main = () => {
     <View style={appStyles.container}>
       <View style={appStyles.searchLogout}>
         <Searchbar
+          testID="searchbar"
           placeholder="Search"
           onChangeText={(e) => setCurrentName(e)}
           onIconPress={() => getUserData()}

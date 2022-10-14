@@ -1,5 +1,5 @@
 import * as React from "react";
-import TestRenderer from "react-test-renderer";
+import TestRenderer, { act, create } from "react-test-renderer";
 import { Main } from "../../screens/SearchUserProfile";
 
 const getComponent = (props = {}) => <Main {...props} />;
@@ -26,5 +26,17 @@ describe("SearchUserProfile - match snapshot", () => {
     const testRenderer = TestRenderer.create(component);
     expect(testRenderer.toJSON()).toMatchSnapshot();
   });
-  it("Search input", () => {});
+  it("Search input", () => {
+    const userDatafcn = jest.fn();
+    const setSearchInput = jest.fn((value) => {});
+    const component = getComponent();
+    const tree = create(component);
+    const searchBar = tree.root.findByProps({ testID: "searchbar" }).props;
+    console.log(searchBar);
+    act(() => {
+      searchBar.onChangeText("hello");
+      searchBar.onIconPress();
+      //   searchBar.onPress();
+    });
+  });
 });
