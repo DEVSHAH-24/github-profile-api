@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchUserProfile - match snapshot Snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "paddingHorizontal": 5,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignContent": "space-between",
+        "alignItems": "space-between",
+        "flexDirection": "row",
+        "padding": 10,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffffff",
+          "borderRadius": 4,
+          "elevation": 4,
+          "flexDirection": "row",
+          "shadowColor": "#000000",
+          "shadowOffset": Object {
+            "height": 3,
+            "width": 0,
+          },
+          "shadowOpacity": 0.24,
+          "shadowRadius": 4,
+        }
+      }
+    >
+      <View
+        accessibilityLabel="search"
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": false,
+          }
+        }
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 6,
+            "left": 6,
+            "right": 6,
+            "top": 6,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "overflow": "hidden",
+            },
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "margin": 6,
+                "overflow": "hidden",
+              },
+              Object {
+                "borderRadius": 18,
+                "height": 36,
+                "width": 36,
+              },
+              undefined,
+              undefined,
+            ],
+          ]
+        }
+      >
+        <View>
+          <Text />
+        </View>
+      </View>
+      <TextInput
+        accessibilityRole="search"
+        accessibilityTraits="search"
+        keyboardAppearance="light"
+        onChangeText={[Function]}
+        placeholder="Search"
+        placeholderTextColor="rgba(0, 0, 0, 0.54)"
+        returnKeyType="search"
+        selectionColor="#6200ee"
+        style={
+          Array [
+            Object {
+              "alignSelf": "stretch",
+              "flex": 1,
+              "fontSize": 18,
+              "minWidth": 0,
+              "paddingLeft": 8,
+              "textAlign": "left",
+            },
+            Object {
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontWeight": "400",
+            },
+            undefined,
+          ]
+        }
+        underlineColorAndroid="transparent"
+      />
+      <View
+        accessibilityLabel="clear"
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
+        accessible={true}
+        focusable={true}
+        hitSlop={
+          Object {
+            "bottom": 6,
+            "left": 6,
+            "right": 6,
+            "top": 6,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "overflow": "hidden",
+            },
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "margin": 6,
+                "overflow": "hidden",
+              },
+              Object {
+                "borderRadius": 18,
+                "height": 36,
+                "width": 36,
+              },
+              Object {
+                "opacity": 0.32,
+              },
+              undefined,
+            ],
+          ]
+        }
+      >
+        <View>
+          <Text />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "padding": 35,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://reactnative.dev/img/tiny_logo.png",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 50,
+            "height": 100,
+            "width": 100,
+          }
+        }
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 25,
+            "fontWeight": "700",
+            "paddingVertical": 20,
+          }
+        }
+      >
+        Name
+      </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 15,
+            "fontWeight": "400",
+            "paddingVertical": 5,
+          }
+        }
+      >
+        Location will appear here
+      </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 15,
+            "fontWeight": "400",
+            "paddingVertical": 5,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "paddingHorizontal": 5,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "green",
+          "fontSize": 20,
+          "fontWeight": "500",
+          "paddingVertical": 10,
+        }
+      }
+    >
+      Public repositories: 
+    </Text>
+    <RCTScrollView
+      data={Object {}}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      keyExtractor={[Function]}
+      onContentSizeChange={[Function]}
+      onLayout={[Function]}
+      onMomentumScrollBegin={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEnabled={true}
+      scrollEventThrottle={50}
+      showsVerticalScrollIndicator={false}
+      stickyHeaderIndices={Array []}
+      viewabilityConfigCallbackPairs={Array []}
+    >
+      <View />
+    </RCTScrollView>
+  </View>
+</View>
+`;

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">27.27% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>6/22</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">27.27% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>6/22</span>
             </div>
         
             
@@ -131,6 +131,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -138,21 +153,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -160,14 +161,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,22 +185,22 @@ import { StyleSheet, Text, View } from "react-native";
 &nbsp;
 import { Searchbar } from "react-native-paper";
 import { appStyles } from "../styles/appStyles";
-import PublicRepos from "../components/PublicRepos";
-import UserInfoCard from "../components/UserInfoCard";
 &nbsp;
-function <span class="fstat-no" title="function not covered" >Main(</span>) {
-  const [userData, setUserData] = <span class="cstat-no" title="statement not covered" >useState({});</span>
+import { PublicRepos } from "../components/PublicRepos";
+import { UserInfoCard } from "../components/UserInfoCard";
 &nbsp;
-  const [currentName, setCurrentName] = <span class="cstat-no" title="statement not covered" >useState("");</span>
-  var gitHubUrl = <span class="cstat-no" title="statement not covered" >`https://api.github.com/users/${currentName}`;</span>
+export const Main = () =&gt; {
+  const [userData, setUserData] = useState({});
 &nbsp;
-  const getUserData = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+  const [currentName, setCurrentName] = useState("");
+  var gitHubUrl = `https://api.github.com/users/${currentName}`;
+&nbsp;
+  const getUserData = <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {
 <span class="cstat-no" title="statement not covered" >    try {</span>
 <span class="cstat-no" title="statement not covered" >      if (currentName !== "") {</span>
         const response = <span class="cstat-no" title="statement not covered" >await fetch(gitHubUrl);</span>
         const jsonData = <span class="cstat-no" title="statement not covered" >await response.json();</span>
 <span class="cstat-no" title="statement not covered" >        if (jsonData &amp;&amp; jsonData.message !== "Not Found") {</span>
-          // CHECK THE REDUNDANCY HERE
 <span class="cstat-no" title="statement not covered" >          setUserData(jsonData);</span>
 <span class="cstat-no" title="statement not covered" >          console.log(jsonData);</span>
         } else <span class="cstat-no" title="statement not covered" >if (jsonData.message === "Not found") {</span>
@@ -214,11 +214,12 @@ function <span class="fstat-no" title="function not covered" >Main(</span>) {
         }
       }
     } catch (error) {
+      //alert(error);
 <span class="cstat-no" title="statement not covered" >      console.log(error, "error msg");</span>
     }
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;View style={appStyles.container}&gt;
       &lt;View style={appStyles.searchLogout}&gt;
         &lt;Searchbar
@@ -234,8 +235,7 @@ function <span class="fstat-no" title="function not covered" >Main(</span>) {
       &lt;PublicRepos userData={userData} /&gt;
     &lt;/View&gt;
   );
-}
-&nbsp;
+};
 export default Main;
 &nbsp;</pre></td></tr></table></pre>
 
@@ -244,7 +244,7 @@ export default Main;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-14T07:39:05.494Z
+                at 2022-10-14T08:02:53.618Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -4,10 +4,11 @@ import { StyleSheet, Text, View } from "react-native";
 
 import { Searchbar } from "react-native-paper";
 import { appStyles } from "../styles/appStyles";
-import PublicRepos from "../components/PublicRepos";
-import UserInfoCard from "../components/UserInfoCard";
 
-const Main = () => {
+import { PublicRepos } from "../components/PublicRepos";
+import { UserInfoCard } from "../components/UserInfoCard";
+
+export const Main = () => {
   const [userData, setUserData] = useState({});
 
   const [currentName, setCurrentName] = useState("");
@@ -32,7 +33,7 @@ const Main = () => {
         }
       }
     } catch (error) {
-      alert(error);
+      //alert(error);
       console.log(error, "error msg");
     }
   };
@@ -54,5 +55,4 @@ const Main = () => {
     </View>
   );
 };
-
 export default Main;
