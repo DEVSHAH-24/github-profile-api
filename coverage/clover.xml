@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665669924953" clover="3.2.0">
-  <project timestamp="1665669924953" name="All files">
-    <metrics statements="102" coveredstatements="9" conditionals="42" coveredconditionals="0" methods="32" coveredmethods="3" elements="176" coveredelements="12" complexity="0" loc="102" ncloc="102" packages="4" files="11" classes="11"/>
+<coverage generated="1665733145516" clover="3.2.0">
+  <project timestamp="1665733145516" name="All files">
+    <metrics statements="103" coveredstatements="10" conditionals="42" coveredconditionals="0" methods="32" coveredmethods="3" elements="177" coveredelements="13" complexity="0" loc="103" ncloc="103" packages="4" files="11" classes="11"/>
     <package name="github-profile-api-1">
       <metrics statements="11" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="App.js" path="/Users/devshah/github-profile-api-1/App.js">
@@ -29,16 +29,17 @@
       </file>
     </package>
     <package name="github-profile-api-1.components">
-      <metrics statements="31" coveredstatements="6" conditionals="22" coveredconditionals="0" methods="12" coveredmethods="3"/>
+      <metrics statements="32" coveredstatements="7" conditionals="22" coveredconditionals="0" methods="12" coveredmethods="3"/>
       <file name="LogOutButton.js" path="/Users/devshah/github-profile-api-1/components/LogOutButton.js">
-        <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
       </file>
       <file name="PublicRepos.js" path="/Users/devshah/github-profile-api-1/components/PublicRepos.js">
         <metrics statements="20" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="6" coveredmethods="0"/>

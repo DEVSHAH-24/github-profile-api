@@ -7,7 +7,7 @@ import { appStyles } from "../styles/appStyles";
 import PublicRepos from "../components/PublicRepos";
 import UserInfoCard from "../components/UserInfoCard";
 
-function Main() {
+const Main = () => {
   const [userData, setUserData] = useState({});
 
   const [currentName, setCurrentName] = useState("");
@@ -19,7 +19,6 @@ function Main() {
         const response = await fetch(gitHubUrl);
         const jsonData = await response.json();
         if (jsonData && jsonData.message !== "Not Found") {
-          // CHECK THE REDUNDANCY HERE
           setUserData(jsonData);
           console.log(jsonData);
         } else if (jsonData.message === "Not found") {
@@ -33,6 +32,7 @@ function Main() {
         }
       }
     } catch (error) {
+      alert(error);
       console.log(error, "error msg");
     }
   };
@@ -53,6 +53,6 @@ function Main() {
       <PublicRepos userData={userData} />
     </View>
   );
-}
+};
 
 export default Main;

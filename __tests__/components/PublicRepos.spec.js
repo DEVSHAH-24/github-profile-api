@@ -5,14 +5,14 @@ import PublicRepos from "../../components/PublicRepos";
 const getComponent = (props = {}) => <PublicRepos {...props} />;
 
 describe("PublicRepos", () => {
-  test("Snapshot", () => {
+  test("Snapshot 1", () => {
     const component = getComponent();
     const testRenderer = TestRenderer.create(component);
 
     expect(testRenderer.toJSON()).toMatchSnapshot();
   });
 
-  test("Snapshot", () => {
+  test("Snapshot 2", () => {
     const component = getComponent({
       userData: {
         login: "debajitdeb11",

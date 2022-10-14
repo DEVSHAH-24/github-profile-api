@@ -56,7 +56,7 @@ SF:components/LogOutButton.js
 FN:7,(anonymous_0)
 FN:10,(anonymous_1)
 FN:12,(anonymous_2)
-FN:15,(anonymous_3)
+FN:16,(anonymous_3)
 FNF:4
 FNH:3
 FNDA:1,(anonymous_0)
@@ -68,10 +68,11 @@ DA:8,1
 DA:10,1
 DA:11,1
 DA:13,1
-DA:15,0
-DA:17,1
-LF:7
-LH:6
+DA:14,1
+DA:16,0
+DA:18,1
+LF:8
+LH:7
 BRF:0
 BRH:0
 end_of_record
