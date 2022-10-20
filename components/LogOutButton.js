@@ -11,7 +11,6 @@ export const LogOutButton = () => {
     signOut(auth)
       .then(() => {
         navigation.navigate("Login");
-        console.log(auth.currentUser);
       })
       .catch((e) => alert(e.message));
   };

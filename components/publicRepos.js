@@ -8,23 +8,6 @@ export function PublicRepos({ userData }) {
 
   const [repoData, setRepoData] = useState({});
 
-  const getRepoData = async () => {
-    try {
-      const response = await fetch(userData.repos_url);
-      const jsonData = await response.json();
-      if (jsonData && jsonData.message !== "Not Found") {
-        setRepoData(jsonData);
-        console.log(jsonData);
-      } else if (repoData !== "") {
-      } else {
-        console.log("case 3");
-        setUserData({});
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     if (userData?.repos_url) {
       getRepoData();

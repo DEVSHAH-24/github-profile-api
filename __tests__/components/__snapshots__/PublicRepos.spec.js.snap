@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PublicRepos Snapshot 1 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "paddingHorizontal": 5,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "green",
+        "fontSize": 20,
+        "fontWeight": "500",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    Public repositories: 
+  </Text>
+  <RCTScrollView
+    data={Object {}}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={50}
+    showsVerticalScrollIndicator={false}
+    stickyHeaderIndices={Array []}
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View />
+  </RCTScrollView>
+</View>
+`;
+
+exports[`PublicRepos Snapshot 2 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "paddingHorizontal": 5,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "green",
+        "fontSize": 20,
+        "fontWeight": "500",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    Public repositories: 
+  </Text>
+  <RCTScrollView
+    data={Object {}}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={50}
+    showsVerticalScrollIndicator={false}
+    stickyHeaderIndices={Array []}
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View />
+  </RCTScrollView>
+</View>
+`;

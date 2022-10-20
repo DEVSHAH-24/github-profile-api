@@ -3,16 +3,27 @@ import TestRenderer from "react-test-renderer";
 import PublicRepos from "../../components/PublicRepos";
 
 const getComponent = (props = {}) => <PublicRepos {...props} />;
+const mockedDispatch = jest.fn();
 
+jest.mock("@react-navigation/native", () => {
+  const actualNav = jest.requireActual("@react-navigation/native");
+  return {
+    ...actualNav,
+    useNavigation: () => ({
+      navigate: jest.fn(),
+      dispatch: mockedDispatch,
+    }),
+  };
+});
 describe("PublicRepos", () => {
-  test("Snapshot 1", () => {
+  test("Snapshot 1", async () => {
     const component = getComponent();
     const testRenderer = TestRenderer.create(component);
 
-    expect(testRenderer.toJSON()).toMatchSnapshot();
+    await expect(testRenderer.toJSON()).toMatchSnapshot();
   });
 
-  test("Snapshot 2", () => {
+  test("Snapshot 2", async () => {
     const component = getComponent({
       userData: {
         login: "debajitdeb11",
@@ -56,6 +67,6 @@ describe("PublicRepos", () => {
     });
     const testRenderer = TestRenderer.create(component);
 
-    expect(testRenderer.toJSON()).toMatchSnapshot();
+    await expect(testRenderer.toJSON()).toMatchSnapshot();
   });
 });

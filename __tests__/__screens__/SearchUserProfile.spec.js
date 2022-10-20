@@ -1,6 +1,7 @@
 import * as React from "react";
 import TestRenderer, { act, create } from "react-test-renderer";
 import { Main } from "../../screens/SearchUserProfile";
+import { render, fireEvent } from "@testing-library/react";
 
 const getComponent = (props = {}) => <Main {...props} />;
 const mockedUsedNavigate = jest.fn();
@@ -27,16 +28,20 @@ describe("SearchUserProfile - match snapshot", () => {
     expect(testRenderer.toJSON()).toMatchSnapshot();
   });
   it("Search input", () => {
-    const userDatafcn = jest.fn();
-    const setSearchInput = jest.fn((value) => {});
     const component = getComponent();
     const tree = create(component);
+    const setFn = jest.fn();
     const searchBar = tree.root.findByProps({ testID: "searchbar" }).props;
-    console.log(searchBar);
+
     act(() => {
-      searchBar.onChangeText("hello");
-      searchBar.onIconPress();
-      //   searchBar.onPress();
+      //searchBar.props({ onChangeText: { setFn } });
     });
+    expect(setFn).toHaveBeenCalled();
+  });
+  it("Search input 2", () => {
+    const getUserData = jest.fn((value) => {});
+    const renderMain = render(<Main />);
+
+    const searchbar = getBy(renderMain);
   });
 });
