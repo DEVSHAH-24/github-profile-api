@@ -22,5 +22,8 @@ export const githubApiReducers = (state = initialState, action) => {
 
     case CLEAR_REPO_DATA:
       return { ...state, repoData: null };
+
+    default:
+      return state;
   }
 };
