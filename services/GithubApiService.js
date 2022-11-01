@@ -1,10 +1,16 @@
 import axios from "axios";
-import { useDispatch } from "react-redux";
-export const getRepoData = async (url) => {
+import {
+  settingRepoData,
+  settingUserData,
+  clearingRepoData,
+  clearingUserData,
+} from "../actions/GithubAPIActions";
+export const getRepoData = (url) => async (dispatch) => {
   try {
     const response = await axios.get(url);
     if (response) {
       const jsonData = response.json();
+      dispatch(settingRepoData(jsonData));
       // do something
     } else {
       // do something

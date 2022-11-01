@@ -24,7 +24,7 @@ export function clearingRepoData(repoData) {
   };
 }
 
-export function settingRepoData() {
+export function settingRepoData(repoData) {
   return {
     type: SET_REPO_DATA,
     payload: repoData,
