@@ -1,10 +1,6 @@
 import axios from "axios";
-import {
-  settingRepoData,
-  settingUserData,
-  clearingRepoData,
-  clearingUserData,
-} from "../actions/GithubAPIActions";
+import { settingRepoData, clearingRepoData } from "../actions/GithubAPIActions";
+
 export const getRepoData = (url) => async (dispatch) => {
   try {
     const response = await axios.get(url);
