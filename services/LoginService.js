@@ -1,10 +1,14 @@
-import { async } from "@firebase/util";
+import { useNavigation } from "@react-navigation/native";
 import {
   createUserWithEmailAndPassword,
-  onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
-import { settingUserData } from "../actions/GithubAPIActions";
+import {
+  handleLoginData,
+  handleRegisterData,
+  handleLogOut,
+} from "../actions/LoginActions";
 import { auth } from "../firebase";
 
 const validateEmail = (email) => {
@@ -39,20 +43,31 @@ export const handleSignUp = (email, password) => async (dispatch) => {
     ? createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
           const user = userCredentials.user;
-          dispatch(settingUserData(user));
+          console.log(user);
+          dispatch(handleRegisterData(user));
         })
         .catch((e) => alert(e.message))
     : null;
 };
 
-export const handleLogin = (email, password) => {
+export const handleLogin = (email, password) => async (dispatch) => {
   validateLogin(password, email)
     ? signInWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
-          const user = userCredentials.user;
-          dispatch(settingUserData(user));
+          const user = userCredentials.user.uid;
+          // console.log(user);
+
+          dispatch(handleLoginData(user));
           //  navigation.navigate("Home");
         })
         .catch((e) => alert(e.message))
     : null;
+};
+
+export const handleSignOut = async (dispatch) => {
+  signOut(auth)
+    .then(() => {
+      dispatch(handleLogOut());
+    })
+    .catch((e) => alert(e.message));
 };

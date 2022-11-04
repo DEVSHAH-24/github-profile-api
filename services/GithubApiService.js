@@ -5,8 +5,7 @@ export const getRepoData = (url) => async (dispatch) => {
   try {
     const response = await axios.get(url);
     if (response) {
-      const jsonData = response.json();
-      dispatch(settingRepoData(jsonData));
+      dispatch(settingRepoData(response));
       // do something
     } else {
       // do something
