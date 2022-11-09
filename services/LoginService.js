@@ -54,10 +54,8 @@ export const handleLogin = (email, password) => async (dispatch) => {
     ? signInWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
           const user = userCredentials.user.uid;
-          // console.log(user);
 
           dispatch(handleLoginData(user));
-          //  navigation.navigate("Home");
         })
         .catch((e) => alert(e.message))
     : null;

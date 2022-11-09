@@ -20,15 +20,11 @@ const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigation();
-  const gitHubImageURL =
-    "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png";
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log("before nav");
         navigation.navigate("Home");
-        console.log("after nav");
       }
     });
     return unsubscribe;
