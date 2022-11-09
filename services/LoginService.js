@@ -5,8 +5,8 @@ import {
 } from "firebase/auth";
 import {
   handleLoginData,
-  handleRegisterData,
   handleLogOut,
+  handleRegisterData,
 } from "../actions/LoginActions";
 import { auth } from "../firebase";
 

@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
 
 import { Searchbar } from "react-native-paper";
@@ -7,10 +6,7 @@ import { appStyles } from "../styles/appStyles";
 
 import { PublicRepos } from "../components/PublicRepos";
 import { UserInfoCard } from "../components/UserInfoCard";
-import store from "../StoreFile";
-import { settingRepoData, settingUserData } from "../actions/GithubAPIActions";
 import { getUserData } from "../services/GithubApiService";
-import { useSelector } from "react-redux";
 
 export const Main = () => {
   const [userData, setUserData] = useState({});

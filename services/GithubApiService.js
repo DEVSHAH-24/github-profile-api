@@ -1,5 +1,4 @@
 import axios from "axios";
-import { settingRepoData, clearingRepoData } from "../actions/GithubAPIActions";
 
 export const getRepoData = async (url) => {
   // to get the repositories of a particular username when searched, after getting user data
