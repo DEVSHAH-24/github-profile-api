@@ -1,8 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { getRepoData } from "../services/GithubApiService";
 import { appStyles } from "../styles/appStyles";
-
 export function PublicRepos({ userData }) {
   const navigation = useNavigation();
 

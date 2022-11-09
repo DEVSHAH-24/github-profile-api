@@ -7,7 +7,6 @@ import { appStyles } from "../styles/appStyles";
 
 import { PublicRepos } from "../components/PublicRepos";
 import { UserInfoCard } from "../components/UserInfoCard";
-import { connect } from "react-redux";
 import store from "../StoreFile";
 import { settingRepoData, settingUserData } from "../actions/GithubAPIActions";
 
@@ -59,6 +58,4 @@ export const Main = () => {
     </View>
   );
 };
-export const mapStateToProps = (state) => ({});
-export const mapDispatchToProps = (dispatch) => ({});
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default Main;

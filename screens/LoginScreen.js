@@ -10,7 +10,7 @@ import {
 } from "react-native";
 
 import { appStyles } from "../styles/appStyles";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { handleLogin, handleSignUp } from "../services/LoginService";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
