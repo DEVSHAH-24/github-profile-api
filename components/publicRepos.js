@@ -8,10 +8,15 @@ export function PublicRepos({ userData }) {
 
   const [repoData, setRepoData] = useState({});
 
-  useEffect(() => {
+  const fetchRepos = async () => {
     if (userData?.repos_url) {
-      getRepoData();
+      const repos = await getRepoData(userData.repos_url);
+      setRepoData(repos);
     }
+  };
+
+  useEffect(() => {
+    fetchRepos();
   }, [userData]);
 
   return (
