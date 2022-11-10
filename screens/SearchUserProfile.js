@@ -15,37 +15,20 @@ export const Main = () => {
 
   const handleSearch = async (_search) => {
     const response = await getUserData(_search);
-
-    if (response) {
-      setUserData(response);
-    } else {
-      setUserData({});
+    try {
+      if (response) {
+        setUserData(response);
+      } else if (response.message === "Not found") {
+        //searched username does not exist
+        alert("Username not found, please try a different username");
+        setUserData({});
+      } else {
+        setUserData({});
+      }
+    } catch (error) {
+      alert(error);
     }
   };
-
-  // const getUserData = async () => {
-  //   try {
-  //     if (currentName !== "") {
-  //       const response = await fetch(gitHubUrl);
-  //       const jsonData = await response.json();
-  //       if (jsonData && jsonData.message !== "Not Found") {
-  //         setUserData(jsonData);
-  //         console.log(jsonData);
-  //       } else if (jsonData.message === "Not found") {
-  //         alert("Username not found", "Please try a different username");
-
-  //         console.log("Username does not exist");
-  //         setUserData({});
-  //       } else {
-  //         alert("Username not found", "Please try a different username");
-  //         setUserData({});
-  //       }
-  //     }
-  //   } catch (error) {
-  //     //alert(error);
-  //     //  console.log(error, "error msg");
-  //   }
-  // };
 
   return (
     <View style={appStyles.container}>
