@@ -1,24 +1,23 @@
-import {
-  LOGIN_USER,
-  REGISTER_USER,
-  LOGOUT_USER,
-} from "../actions/LoginActions";
+import { LoginAction } from "../actions/LoginActions";
 
 export const initialState = {
   user: undefined,
 };
 
-export const loginReducers = (state = initialState, action = {}) => {
+export const loginReducers = (state = initialState, action) => {
+  console.log(action.payload);
   switch (action.type) {
-    case LOGIN_USER:
+    case LoginAction.LOGIN_USER:
+      console.log("login user ", LoginAction.LOGIN_USER);
       return { ...state, user: action.payload };
 
-    case REGISTER_USER:
+    case LoginAction.REGISTER_USER:
       return { ...state, user: action.payload };
 
-    case LOGOUT_USER:
+    case LoginAction.LOGOUT_USER:
       return { ...state, user: undefined };
     default:
+      console.log(state, "this is state");
       return state;
   }
 };
