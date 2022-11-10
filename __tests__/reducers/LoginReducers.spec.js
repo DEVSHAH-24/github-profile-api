@@ -8,7 +8,6 @@ describe("Login reducer", () => {
   test("LOGIN_USER", () => {
     const data = "RANDOM123";
     const action = { type: LoginAction.LOGIN_USER, payload: data };
-    //  const expectedState = { ...initialState};
 
     expect(loginReducers(initialState, action)).toEqual({ user: data });
   });
