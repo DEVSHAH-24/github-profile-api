@@ -4,11 +4,11 @@ import {
   LOGOUT_USER,
 } from "../actions/LoginActions";
 
-const initialState = {
+export const initialState = {
   user: undefined,
 };
 
-export const loginReducers = (state = initialState, action) => {
+export const loginReducers = (state = initialState, action = {}) => {
   switch (action.type) {
     case LOGIN_USER:
       return { ...state, user: action.payload };

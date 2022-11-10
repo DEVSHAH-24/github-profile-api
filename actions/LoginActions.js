@@ -1,23 +1,26 @@
 //actions identified - logging in  and registering the user (2)
-export const LOGIN_USER = "LOGIN_USER";
-export const REGISTER_USER = "REGISTER_USER";
-export const LOGOUT_USER = "LOGOUT_USER";
+export const LoginAction = {
+  LOGIN_USER: "LOGIN_USER",
+  REGISTER_USER: "REGISTER_USER",
+  LOGOUT_USER: "LOGOUT_USER",
+};
+
 export function handleLoginData(data) {
   return {
-    type: LOGIN_USER,
+    type: LoginAction.LOGIN_USER,
     payload: data,
   };
 }
 
 export function handleRegisterData(data) {
   return {
-    type: REGISTER_USER,
+    type: LoginAction.REGISTER_USER,
     payload: data,
   };
 }
 
 export function handleLogOut() {
   return {
-    type: LOGOUT_USER,
+    type: LoginAction.LOGOUT_USER,
   };
 }

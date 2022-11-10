@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668071728513" clover="3.2.0">
-  <project timestamp="1668071728513" name="All files">
-    <metrics statements="130" coveredstatements="1" conditionals="43" coveredconditionals="0" methods="43" coveredmethods="0" elements="216" coveredelements="1" complexity="0" loc="130" ncloc="130" packages="8" files="18" classes="18"/>
+<coverage generated="1668073268918" clover="3.2.0">
+  <project timestamp="1668073268918" name="All files">
+    <metrics statements="128" coveredstatements="5" conditionals="44" coveredconditionals="3" methods="43" coveredmethods="1" elements="215" coveredelements="9" complexity="0" loc="128" ncloc="128" packages="8" files="18" classes="18"/>
     <package name="github-profile-api-1">
       <metrics statements="12" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="App.js" path="/Users/devshah/github-profile-api-1/App.js">
@@ -33,15 +33,13 @@
       </file>
     </package>
     <package name="github-profile-api-1.actions">
-      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="LoginActions.js" path="/Users/devshah/github-profile-api-1/actions/LoginActions.js">
-        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
       </file>
     </package>
     <package name="github-profile-api-1.assets">
@@ -91,13 +89,13 @@
       </file>
     </package>
     <package name="github-profile-api-1.reducers">
-      <metrics statements="8" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="8" coveredstatements="4" conditionals="6" coveredconditionals="3" methods="1" coveredmethods="1"/>
       <file name="LoginReducers.js" path="/Users/devshah/github-profile-api-1/reducers/LoginReducers.js">
-        <metrics statements="7" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="11" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="12" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="14" count="0" type="stmt"/>
+        <metrics statements="7" coveredstatements="4" conditionals="6" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="3"/>
+        <line num="14" count="1" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
@@ -204,10 +202,10 @@
       </file>
     </package>
     <package name="github-profile-api-1.styles">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="appStyles.js" path="/Users/devshah/github-profile-api-1/styles/appStyles.js">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
       </file>
     </package>
   </project>
