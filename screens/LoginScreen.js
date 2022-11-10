@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { handleLogin, handleSignUp } from "../services/LoginService";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
+import { gitHubImageURL } from "../assets/Constants";
 
 const LoginScreen = () => {
   const dispatch = useDispatch();

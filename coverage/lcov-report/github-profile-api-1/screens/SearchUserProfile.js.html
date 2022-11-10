@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.76% </span>
+                <span class="strong">6.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/21</span>
+                <span class='fraction'>1/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.76% </span>
+                <span class="strong">6.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/21</span>
+                <span class='fraction'>1/16</span>
             </div>
         
             
@@ -114,15 +114,7 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -136,12 +128,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -153,12 +140,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -181,8 +165,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
-import { useState } from "react";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from "react";
 import { View } from "react-native";
 &nbsp;
 import { Searchbar } from "react-native-paper";
@@ -190,34 +173,27 @@ import { appStyles } from "../styles/appStyles";
 &nbsp;
 import { PublicRepos } from "../components/PublicRepos";
 import { UserInfoCard } from "../components/UserInfoCard";
+import { getUserData } from "../services/GithubApiService";
 &nbsp;
 export const Main = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
   const [userData, setUserData] = <span class="cstat-no" title="statement not covered" >useState({});</span>
 &nbsp;
-  const [currentName, setCurrentName] = <span class="cstat-no" title="statement not covered" >useState("");</span>
-  var gitHubUrl = <span class="cstat-no" title="statement not covered" >`https://api.github.com/users/${currentName}`;</span>
+  const [search, setSearch] = <span class="cstat-no" title="statement not covered" >useState("");</span>
 &nbsp;
-  const getUserData = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+  const handleSearch = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync (_search) =&gt; {</span>
+    const response = <span class="cstat-no" title="statement not covered" >await getUserData(_search);</span>
 <span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      if (currentName !== "") {</span>
-        const response = <span class="cstat-no" title="statement not covered" >await fetch(gitHubUrl);</span>
-        const jsonData = <span class="cstat-no" title="statement not covered" >await response.json();</span>
-<span class="cstat-no" title="statement not covered" >        if (jsonData &amp;&amp; jsonData.message !== "Not Found") {</span>
-<span class="cstat-no" title="statement not covered" >          setUserData(jsonData);</span>
-<span class="cstat-no" title="statement not covered" >          console.log(jsonData);</span>
-        } else <span class="cstat-no" title="statement not covered" >if (jsonData.message === "Not found") {</span>
-<span class="cstat-no" title="statement not covered" >          alert("Username not found", "Please try a different username");</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >          console.log("Username does not exist");</span>
-<span class="cstat-no" title="statement not covered" >          setUserData({});</span>
-        } else {
-<span class="cstat-no" title="statement not covered" >          alert("Username not found", "Please try a different username");</span>
-<span class="cstat-no" title="statement not covered" >          setUserData({});</span>
-        }
+<span class="cstat-no" title="statement not covered" >      if (response) {</span>
+<span class="cstat-no" title="statement not covered" >        setUserData(response);</span>
+      } else <span class="cstat-no" title="statement not covered" >if (response.message === "Not found") {</span>
+        //searched username does not exist
+<span class="cstat-no" title="statement not covered" >        alert("Username not found, please try a different username");</span>
+<span class="cstat-no" title="statement not covered" >        setUserData({});</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        setUserData({});</span>
       }
     } catch (error) {
-      //alert(error);
-      //  console.log(error, "error msg");
+<span class="cstat-no" title="statement not covered" >      alert(error);</span>
     }
   };
 &nbsp;
@@ -227,8 +203,8 @@ export const Main = <span class="fstat-no" title="function not covered" >()</spa
         &lt;Searchbar
           testID="searchbar"
           placeholder="Search"
-          onChangeText={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setCurrentName(e)}</span>
-          onIconPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >getUserData()}</span>
+          onChangeText={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setSearch(e)}</span>
+          onIconPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleSearch(search)}</span>
         /&gt;
       &lt;/View&gt;
       &lt;View&gt;
@@ -247,7 +223,7 @@ export default Main;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-20T07:09:06.404Z
+                at 2022-11-10T07:55:07.591Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
