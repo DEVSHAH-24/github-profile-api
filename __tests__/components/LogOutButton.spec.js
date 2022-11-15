@@ -1,11 +1,18 @@
 import * as React from "react";
-import TestRenderer, { act, create } from "react-test-renderer";
 import LogOutButton from "../../components/LogOutButton";
-import { render, fireEvent } from "@testing-library/react-native";
-import { useNavigation } from "@react-navigation/native";
-import { auth } from "../../firebase";
+
+import { shallow } from "enzyme";
+import Enzyme from "enzyme";
+import Adapter from "enzyme-adapter-react-17-updated";
+
+Enzyme.configure({ adapter: new Adapter() });
 
 const mockedDispatch = jest.fn();
+
+jest.mock("react-redux", () => ({
+  useSelector: jest.fn(),
+  useDispatch: () => mockedDispatch,
+}));
 
 jest.mock("@react-navigation/native", () => {
   const actualNav = jest.requireActual("@react-navigation/native");
@@ -18,43 +25,48 @@ jest.mock("@react-navigation/native", () => {
   };
 });
 
-const getComponent = (props = {}) => <LogOutButton {...props} />;
+const getComponent = (props = {}) => shallow(<LogOutButton {...props} />);
 
 describe("LogOutButton", () => {
   beforeEach(() => {
     mockedDispatch.mockClear();
   });
 
-  it("button on press", () => {
+  it("Snapshot", () => {
     const component = getComponent();
-    const { getByTestId } = render(<LogOutButton />);
-    const button = getByTestId("logout-btn");
-    fireEvent.press(button);
-    expect(auth.currentUser).toBe(null);
+
     expect(component).toMatchSnapshot();
   });
-  // it("button on press 2", () => {
-  //   const component = getComponent();
-  //   const tree = create(component);
-  //   const button = tree.root.findByProps({ testID: "logout-btn" }).props;
-  //   act(() => button.onPress());
-  //   expect(auth.currentUser).toBeNull();
-  // });
-  it("button on press fail", () => {
+  it("Button click process", () => {
     const component = getComponent();
-    const { getByTestId } = render(<LogOutButton />);
-    const button = getByTestId("logout-btn");
-    fireEvent.press(button);
-    auth.currentUser = User();
-    expect(auth.currentUser).not.toBeNull();
+    component.find('Button[testID="logout-btn"]').prop("onPress")();
+    expect(component).toMatchSnapshot();
   });
+
+  // it("Btn onPress", () => {
+  //   const component = getComponent();
+
+  //   const btn = component.props();
+
+  //   console.log(btn);
+
+  //   expect(component).toMatchSnapshot();
+  // });
 });
 // it("button on press", () => {
-//   const { getByTestId } = getComponent();
-//   const testRenderer = TestRenderer.create(getByTestId);
-//   act(() => render(getByTestId));
-
+//   const component = getComponent();
+//   const { getByTestId } = render(<LogOutButton />);
+//   const button = getByTestId("logout-btn");
 //   fireEvent.press(button);
+//   expect(auth.currentUser).toBe(null);
+//   expect(component).toMatchSnapshot();
+// });
 
-//   expect(mockedDispatch).toHaveBeenCalledTimes(1);
-//   expect(mockedDispatch).toHaveBeenCalledWith(DrawerActions.toggleDrawer());
+// it("button on press fail", () => {
+//   const component = getComponent();
+//   const { getByTestId } = render(<LogOutButton />);
+//   const button = getByTestId("logout-btn");
+//   fireEvent.press(button);
+//   auth.currentUser = User();
+//   expect(auth.currentUser).not.toBeNull();
+// });

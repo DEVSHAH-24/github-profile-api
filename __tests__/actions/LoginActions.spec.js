@@ -14,7 +14,7 @@ describe("login actions", () => {
     };
     expect(handleLoginData(data)).toEqual(expectedAction);
   });
-  test("user should be non null when logged in", () => {
+  test("user should be non null when registered in", () => {
     const data = "random123";
     const expectedAction = {
       type: LoginAction.REGISTER_USER,

@@ -1,3 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LogOutButton button on press 1`] = `<LogOutButton />`;
+exports[`LogOutButton Button click process 1`] = `
+<Button
+  onPress={[Function]}
+  testID="logout-btn"
+  title="Logout"
+/>
+`;
+
+exports[`LogOutButton Snapshot 1`] = `
+<Button
+  onPress={[Function]}
+  testID="logout-btn"
+  title="Logout"
+/>
+`;
