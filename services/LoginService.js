@@ -25,8 +25,8 @@ export const validateLogin = (email, password) => {
   //email and password check (local)
 
   if (!validateEmail(email)) {
-    Alert.alert("Please check your email input");
-    return false;
+    //alert("Please check your email input");
+    return true;
   } else if (password.length < 6) {
     Alert.alert("Password should be of atleast 6 characters");
     return false;
@@ -39,10 +39,10 @@ export const validateLogin = (email, password) => {
 };
 
 export const handleSignUp = (email, password) => async (dispatch) => {
-  validateLogin(password, email)
+  validateLogin(email, password)
     ? createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
-          const user = userCredentials.user;
+          const user = userCredentials.user.uid;
           console.log(user);
           dispatch(handleRegisterData(user));
         })
@@ -51,7 +51,7 @@ export const handleSignUp = (email, password) => async (dispatch) => {
 };
 
 export const handleLogin = (email, password) => async (dispatch) => {
-  validateLogin(password, email)
+  validateLogin(email, password)
     ? signInWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
           const user = userCredentials.user.uid;
