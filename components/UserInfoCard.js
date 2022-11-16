@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, Image } from "react-native";
 import { View } from "react-native";
+import { reactLogo } from "../assets/Constants";
 import { appStyles } from "../styles/appStyles";
 
 export function UserInfoCard({ userData }) {
@@ -11,7 +12,7 @@ export function UserInfoCard({ userData }) {
         source={{
           uri:
             userData?.avatar_url === undefined
-              ? "https://reactnative.dev/img/tiny_logo.png"
+              ? reactLogo
               : userData.avatar_url,
         }}
       />

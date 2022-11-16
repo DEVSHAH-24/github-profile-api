@@ -35,6 +35,7 @@ describe("Login tests", () => {
     expect(validateLogin(email, password3)).toEqual(false);
     expect(validateLogin(incorrectEmail, password2)).toEqual(false);
   });
+
   test("login", () => {});
   test("register", () => {});
 });
