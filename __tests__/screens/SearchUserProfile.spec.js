@@ -1,9 +1,13 @@
+import { shallow } from "enzyme";
 import * as React from "react";
 import TestRenderer, { act, create } from "react-test-renderer";
 import { Main } from "../../screens/SearchUserProfile";
-import { render, fireEvent } from "@testing-library/react";
+import Enzyme from "enzyme";
+import Adapter from "enzyme-adapter-react-17-updated";
 
-const getComponent = (props = {}) => <Main {...props} />;
+Enzyme.configure({ adapter: new Adapter() });
+
+const getComponent = (props = {}) => shallow(<Main {...props} />);
 const mockedUsedNavigate = jest.fn();
 
 jest.mock("@react-navigation/native", () => {
@@ -38,10 +42,11 @@ describe("SearchUserProfile - match snapshot", () => {
     });
     expect(setFn).toHaveBeenCalled();
   });
-  it("Search input 2", () => {
-    const getUserData = jest.fn((value) => {});
-    const renderMain = render(<Main />);
 
-    const searchbar = getBy(renderMain);
+  it("on change text", () => {
+    const component = getComponent();
+    console.log(component.debug());
+    //component.find('[testID="searchbar"]').prop("OnIconPress");
+    expect(component).toMatchSnapshot();
   });
 });

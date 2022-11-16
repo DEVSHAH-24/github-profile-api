@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668508385136" clover="3.2.0">
-  <project timestamp="1668508385136" name="All files">
-    <metrics statements="129" coveredstatements="17" conditionals="43" coveredconditionals="0" methods="43" coveredmethods="3" elements="215" coveredelements="20" complexity="0" loc="129" ncloc="129" packages="8" files="18" classes="18"/>
+<coverage generated="1668591921233" clover="3.2.0">
+  <project timestamp="1668591921233" name="All files">
+    <metrics statements="129" coveredstatements="20" conditionals="43" coveredconditionals="6" methods="43" coveredmethods="2" elements="215" coveredelements="28" complexity="0" loc="129" ncloc="129" packages="8" files="18" classes="18"/>
     <package name="github-profile-api-1">
       <metrics statements="12" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="App.js" path="/Users/devshah/github-profile-api-1/App.js">
@@ -51,16 +51,16 @@
       </file>
     </package>
     <package name="github-profile-api-1.components">
-      <metrics statements="23" coveredstatements="7" conditionals="16" coveredconditionals="0" methods="10" coveredmethods="2"/>
+      <metrics statements="23" coveredstatements="0" conditionals="16" coveredconditionals="0" methods="10" coveredmethods="0"/>
       <file name="LogOutButton.js" path="/Users/devshah/github-profile-api-1/components/LogOutButton.js">
-        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
       </file>
       <file name="PublicRepos.js" path="/Users/devshah/github-profile-api-1/components/PublicRepos.js">
         <metrics statements="12" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="0"/>
@@ -149,7 +149,7 @@
       </file>
     </package>
     <package name="github-profile-api-1.services">
-      <metrics statements="45" coveredstatements="6" conditionals="16" coveredconditionals="0" methods="15" coveredmethods="1"/>
+      <metrics statements="45" coveredstatements="16" conditionals="16" coveredconditionals="6" methods="15" coveredmethods="2"/>
       <file name="GithubApiService.js" path="/Users/devshah/github-profile-api-1/services/GithubApiService.js">
         <metrics statements="17" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="4" count="0" type="stmt"/>
@@ -171,35 +171,35 @@
         <line num="34" count="0" type="stmt"/>
       </file>
       <file name="LoginService.js" path="/Users/devshah/github-profile-api-1/services/LoginService.js">
-        <metrics statements="28" coveredstatements="6" conditionals="10" coveredconditionals="0" methods="13" coveredmethods="1"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="44" count="0" type="stmt"/>
+        <metrics statements="28" coveredstatements="16" conditionals="10" coveredconditionals="6" methods="13" coveredmethods="2"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="27" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="45" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="53" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
       </file>
     </package>
     <package name="github-profile-api-1.styles">

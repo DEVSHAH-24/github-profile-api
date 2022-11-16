@@ -22,28 +22,13 @@ exports[`PublicRepos Snapshot 1 1`] = `
   >
     Public repositories: 
   </Text>
-  <RCTScrollView
+  <FlatList
     data={Object {}}
-    getItem={[Function]}
-    getItemCount={[Function]}
     keyExtractor={[Function]}
-    onContentSizeChange={[Function]}
-    onLayout={[Function]}
-    onMomentumScrollBegin={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    removeClippedSubviews={false}
     renderItem={[Function]}
     scrollEnabled={true}
-    scrollEventThrottle={50}
     showsVerticalScrollIndicator={false}
-    stickyHeaderIndices={Array []}
-    viewabilityConfigCallbackPairs={Array []}
-  >
-    <View />
-  </RCTScrollView>
+  />
 </View>
 `;
 
@@ -69,27 +54,12 @@ exports[`PublicRepos Snapshot 2 1`] = `
   >
     Public repositories: 
   </Text>
-  <RCTScrollView
+  <FlatList
     data={Object {}}
-    getItem={[Function]}
-    getItemCount={[Function]}
     keyExtractor={[Function]}
-    onContentSizeChange={[Function]}
-    onLayout={[Function]}
-    onMomentumScrollBegin={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    removeClippedSubviews={false}
     renderItem={[Function]}
     scrollEnabled={true}
-    scrollEventThrottle={50}
     showsVerticalScrollIndicator={false}
-    stickyHeaderIndices={Array []}
-    viewabilityConfigCallbackPairs={Array []}
-  >
-    <View />
-  </RCTScrollView>
+  />
 </View>
 `;

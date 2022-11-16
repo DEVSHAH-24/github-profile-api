@@ -283,3 +283,41 @@ exports[`SearchUserProfile - match snapshot Snapshot 1`] = `
   </View>
 </View>
 `;
+
+exports[`SearchUserProfile - match snapshot on change text 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "paddingHorizontal": 5,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignContent": "space-between",
+        "alignItems": "space-between",
+        "flexDirection": "row",
+        "padding": 10,
+      }
+    }
+  >
+    <withTheme(undefined)
+      onChangeText={[Function]}
+      onIconPress={[Function]}
+      placeholder="Search"
+      testID="searchbar"
+    />
+  </View>
+  <View>
+    <UserInfoCard
+      userData={Object {}}
+    />
+  </View>
+  <PublicRepos
+    userData={Object {}}
+  />
+</View>
+`;

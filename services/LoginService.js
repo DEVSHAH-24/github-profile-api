@@ -9,8 +9,9 @@ import {
   handleRegisterData,
 } from "../actions/LoginActions";
 import { auth } from "../firebase";
+import { Alert } from "react-native";
 
-const validateEmail = (email) => {
+export const validateEmail = (email) => {
   //regex validation for email
 
   return String(email)
@@ -20,17 +21,17 @@ const validateEmail = (email) => {
     );
 };
 
-const validateLogin = (password, email) => {
+export const validateLogin = (email, password) => {
   //email and password check (local)
 
   if (!validateEmail(email)) {
-    alert("Please check your email input");
+    Alert.alert("Please check your email input");
     return false;
   } else if (password.length < 6) {
-    alert("Password should be of atleast 6 characters");
+    Alert.alert("Password should be of atleast 6 characters");
     return false;
   } else if (password.includes(" ")) {
-    alert("Password should not contain empty spaces");
+    Alert.alert("Password should not contain empty spaces");
     return false;
   } else {
     return true;

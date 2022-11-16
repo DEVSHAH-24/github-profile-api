@@ -1,9 +1,19 @@
 import * as React from "react";
 import TestRenderer from "react-test-renderer";
 import PublicRepos from "../../components/PublicRepos";
+import { shallow } from "enzyme";
+import Enzyme from "enzyme";
+import Adapter from "enzyme-adapter-react-17-updated";
 
-const getComponent = (props = {}) => <PublicRepos {...props} />;
+Enzyme.configure({ adapter: new Adapter() });
+
+const getComponent = (props = {}) => shallow(<PublicRepos {...props} />);
 const mockedDispatch = jest.fn();
+
+jest.mock("react-redux", () => ({
+  useSelector: jest.fn(),
+  useDispatch: () => mockedDispatch,
+}));
 
 jest.mock("@react-navigation/native", () => {
   const actualNav = jest.requireActual("@react-navigation/native");
@@ -16,11 +26,12 @@ jest.mock("@react-navigation/native", () => {
   };
 });
 describe("PublicRepos", () => {
+  beforeEach(() => {
+    mockedDispatch.mockClear();
+  });
   test("Snapshot 1", async () => {
     const component = getComponent();
-    const testRenderer = TestRenderer.create(component);
-
-    await expect(testRenderer.toJSON()).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 
   test("Snapshot 2", async () => {
@@ -65,8 +76,7 @@ describe("PublicRepos", () => {
         updated_at: "2022-09-15T17:40:12Z",
       },
     });
-    const testRenderer = TestRenderer.create(component);
 
-    await expect(testRenderer.toJSON()).toMatchSnapshot();
+    await expect(component).toMatchSnapshot();
   });
 });
