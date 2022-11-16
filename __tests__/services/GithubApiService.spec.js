@@ -25,13 +25,4 @@ describe("github API requests", () => {
       expect(response).toEqual(data);
     });
   });
-  test("get repodata", async () => {
-    const repoUrl = "https://api.github.com/users/DEVSHAH-24/repos";
-  });
-  test("response", () => {
-    axios.get.mockImplementation((url) => Promise.resolve({ data: "" }));
-    getUserData("devshah-24").then((response) => {
-      expect(response).toNotEqual(null);
-    });
-  });
 });

@@ -1,4 +1,6 @@
 import * as axios from "axios";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
 import {
   handleLogin,
   handleSignUp,
@@ -30,7 +32,6 @@ describe("Login tests", () => {
   });
   test("validate login", () => {
     expect(validateLogin(email, password1)).toEqual(true);
-
     expect(validateLogin(email, password2)).toEqual(false);
     expect(validateLogin(email, password3)).toEqual(false);
     expect(validateLogin(incorrectEmail, password2)).toEqual(false);
@@ -38,4 +39,9 @@ describe("Login tests", () => {
 
   test("login", () => {});
   test("register", () => {});
+  test("signOut", () => {
+    handleSignOut(mockedDispatch).then(() => {
+      expect(auth).toBe(null);
+    });
+  });
 });
