@@ -51,7 +51,7 @@ const LoginScreen = () => {
           style={appStyles.input}
         />
         <TextInput
-          placeholder="Password"
+          placeholder="Password (6 characters minimum)"
           secureTextEntry
           style={appStyles.input}
           value={password}
@@ -70,9 +70,11 @@ const LoginScreen = () => {
 
         <TouchableOpacity
           onPress={() => handleSignUp(email, password)(dispatch)}
-          style={appStyles.button}
+          style={appStyles.registerButton}
         >
-          <Text style={[appStyles.buttonText]}>Register</Text>
+          <Text style={[appStyles.buttonText]}>
+            New here? Click here to register
+          </Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>

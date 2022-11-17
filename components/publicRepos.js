@@ -36,13 +36,8 @@ export function PublicRepos({ userData }) {
               navigation.navigate("Webview", { uri: item.clone_url })
             }
           >
-            <Text style={[appStyles.itemTextStyle]}>
-              {item.name}
-              {"\n"}
-            </Text>
-            <Text style={appStyles.mutedText}>
-              {item.language} {"\n"}
-            </Text>
+            <Text style={[appStyles.itemTextStyle]}>{item.name}</Text>
+            <Text style={appStyles.mutedText}>{item.language}</Text>
             <Text>{item.description}</Text>
           </TouchableOpacity>
         )}

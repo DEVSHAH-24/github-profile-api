@@ -42,6 +42,7 @@ export const appStyles = StyleSheet.create({
   itemTextStyle: {
     fontSize: 16,
     fontWeight: "700",
+    paddingVertical: 5,
   },
   item: {
     padding: 20,
@@ -53,6 +54,7 @@ export const appStyles = StyleSheet.create({
   mutedText: {
     fontWeight: "bold",
     color: "grey",
+    paddingVertical: 10,
   },
   inputContainer: {
     width: "80%",
@@ -67,6 +69,15 @@ export const appStyles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#000ffa",
+    padding: 5,
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    height: 50,
+    width: "80%",
+  },
+  registerButton: {
+    backgroundColor: "#000000",
     padding: 5,
     borderRadius: 10,
     alignItems: "center",
