@@ -1,11 +1,15 @@
 import * as React from "react";
-import TestRenderer from "react-test-renderer";
 import PublicRepos from "../../components/PublicRepos";
 import { shallow } from "enzyme";
 import Enzyme from "enzyme";
 import Adapter from "enzyme-adapter-react-17-updated";
+import { getRepoData } from "../../services/GithubApiService";
+import * as gitService from "../../services/GithubApiService";
+import { render } from "react-dom";
+import { act } from "react-test-renderer";
 
 Enzyme.configure({ adapter: new Adapter() });
+jest.mock("../../services/GithubApiService");
 
 const getComponent = (props = {}) => shallow(<PublicRepos {...props} />);
 const mockedDispatch = jest.fn();
@@ -78,5 +82,33 @@ describe("PublicRepos", () => {
     });
 
     await expect(component).toMatchSnapshot();
+  });
+  test("useeffect fetch repos", () => {
+    const component = getComponent({
+      userData: {
+        name: "Random",
+      },
+    });
+    component.setProps({
+      userData: {
+        name: "Dev",
+      },
+    });
+    //pass component with the props
+    expect(component).toMatchSnapshot();
+    // expect().toHaveBeenCalled();
+  });
+  test("webview", () => {
+    const item = {
+      name: "hello",
+      language: "js",
+      clone_url: "https://google.com",
+    };
+    console.log(item.name);
+    const component = getComponent();
+    component.find('[testID="flatlist"]').prop("renderItem")({ item });
+
+    expect(component).toMatchSnapshot();
+    //repoCard.find('[testID="webview"]').props("onPress")();
   });
 });

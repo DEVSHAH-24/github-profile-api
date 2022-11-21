@@ -16,6 +16,7 @@ export function PublicRepos({ userData }) {
   };
 
   useEffect(() => {
+    console.log("this is", userData);
     fetchRepos();
   }, [userData]);
 
@@ -25,12 +26,15 @@ export function PublicRepos({ userData }) {
         Public repositories: {repoData.length}
       </Text>
       <FlatList
+        testID="flatlist"
         data={repoData}
         scrollEnabled={true}
         showsVerticalScrollIndicator={false}
         keyExtractor={({ id }) => id}
+        initialNumToRender={8}
         renderItem={({ item }) => (
           <TouchableOpacity
+            testID="webview"
             style={appStyles.item}
             onPress={() =>
               navigation.navigate("Webview", { uri: item.clone_url })

@@ -260,6 +260,7 @@ exports[`SearchUserProfile - match snapshot Snapshot 1`] = `
       data={Object {}}
       getItem={[Function]}
       getItemCount={[Function]}
+      initialNumToRender={8}
       keyExtractor={[Function]}
       onContentSizeChange={[Function]}
       onLayout={[Function]}

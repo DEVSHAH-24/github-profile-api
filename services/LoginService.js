@@ -25,8 +25,8 @@ export const validateLogin = (email, password) => {
   //email and password check (local)
 
   if (!validateEmail(email)) {
-    //alert("Please check your email input");
-    return true;
+    Alert.alert("Please check your email input");
+    return false;
   } else if (password.length < 6) {
     Alert.alert("Password should be of atleast 6 characters");
     return false;

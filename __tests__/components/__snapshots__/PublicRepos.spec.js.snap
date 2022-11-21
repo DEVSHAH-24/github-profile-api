@@ -24,10 +24,12 @@ exports[`PublicRepos Snapshot 1 1`] = `
   </Text>
   <FlatList
     data={Object {}}
+    initialNumToRender={8}
     keyExtractor={[Function]}
     renderItem={[Function]}
     scrollEnabled={true}
     showsVerticalScrollIndicator={false}
+    testID="flatlist"
   />
 </View>
 `;
@@ -56,10 +58,80 @@ exports[`PublicRepos Snapshot 2 1`] = `
   </Text>
   <FlatList
     data={Object {}}
+    initialNumToRender={8}
     keyExtractor={[Function]}
     renderItem={[Function]}
     scrollEnabled={true}
     showsVerticalScrollIndicator={false}
+    testID="flatlist"
+  />
+</View>
+`;
+
+exports[`PublicRepos useeffect fetch repos 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "paddingHorizontal": 5,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "green",
+        "fontSize": 20,
+        "fontWeight": "500",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    Public repositories: 
+  </Text>
+  <FlatList
+    data={Object {}}
+    initialNumToRender={8}
+    keyExtractor={[Function]}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    showsVerticalScrollIndicator={false}
+    testID="flatlist"
+  />
+</View>
+`;
+
+exports[`PublicRepos webview 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "paddingHorizontal": 5,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "green",
+        "fontSize": 20,
+        "fontWeight": "500",
+        "paddingVertical": 10,
+      }
+    }
+  >
+    Public repositories: 
+  </Text>
+  <FlatList
+    data={Object {}}
+    initialNumToRender={8}
+    keyExtractor={[Function]}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    showsVerticalScrollIndicator={false}
+    testID="flatlist"
   />
 </View>
 `;

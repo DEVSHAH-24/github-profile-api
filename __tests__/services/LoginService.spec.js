@@ -40,8 +40,15 @@ describe("Login tests", () => {
   test("login", () => {});
   test("register", () => {});
   test("signOut", () => {
+    auth.currentUser = "somestring123";
     handleSignOut(mockedDispatch).then(() => {
-      expect(auth).toBe(null);
+      expect(auth.currentUser).toBe(null);
+    });
+  });
+  test("signOut", () => {
+    auth.currentUser = "somestring123";
+    handleSignOut(mockedDispatch).then(() => {
+      expect(auth.currentUser).toBe(null);
     });
   });
 });
